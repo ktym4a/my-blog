@@ -1,5 +1,15 @@
 import React from 'react'
+import Footer from '@components/Footer'
+import Header from '@components/Header'
 
-const Layout: React.FC = ({ children }) => <div>{children}</div>
+const Layout: React.FC = ({ children }) => {
+  return (
+    <div>
+      <Header />
+      {children}
+      <Footer />
+    </div>
+  )
+}
 
 export default Layout
