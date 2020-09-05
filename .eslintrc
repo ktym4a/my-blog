@@ -1,0 +1,14 @@
+{
+  "settings": {
+    "import/resolver": {
+      "alias": [["@components", "./src/components"]]
+    }
+  },
+  "parserOptions": {
+    "ecmaVersion": 2017
+  },
+
+  "env": {
+    "es6": true
+  }
+}
