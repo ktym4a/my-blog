@@ -15,7 +15,7 @@ interface IndexPageProps extends PageProps {
   }
 }
 
-const User = props => (
+const Blog = props => (
   <UserWrapper>
     <Avatar src={props.avatar} alt="" />
     <Description>
@@ -30,14 +30,12 @@ export default class IndexPage extends React.Component<IndexPageProps> {
     return (
       <Layout>
         <Container>
-          <h1 css={underline}>About Emotion</h1>
-          <p>Emotion is uber cool</p>
-          <User
+          <Blog
             username="Jane Doe"
             avatar="https://s3.amazonaws.com/uifaces/faces/twitter/adellecharles/128.jpg"
             excerpt="I'm Jane Doe. Lorem ipsum dolor sit amet, consectetur adipisicing elit."
           />
-          <User
+          <Blog
             username="Bob Smith"
             avatar="https://s3.amazonaws.com/uifaces/faces/twitter/vladarbatov/128.jpg"
             excerpt="I'm Bob smith, a vertically aligned type of guy. Lorem ipsum dolor sit amet, consectetur adipisicing elit."
