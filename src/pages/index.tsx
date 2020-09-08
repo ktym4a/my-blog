@@ -62,6 +62,9 @@ const UserWrapper = styled.div`
   margin-right: auto;
   margin-bottom: 12px;
   margin-left: auto;
+  border-radius: 50px;
+  background: #d05858;
+  box-shadow: 20px 20px 60px #b14b4b, -20px -20px 60px #ef6565;
   &:last-child {
     margin-bottom: 0;
   }
