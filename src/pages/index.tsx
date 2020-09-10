@@ -77,6 +77,9 @@ const Avatar = styled.img`
   width: 96px;
   height: 96px;
   margin: 0;
+  border-radius: 50%;
+  background: #ededed;
+  box-shadow: 5px 5px 5px #c9c9c9, -5px -5px 5px #ffffff;
 `
 
 const Description = styled.div`
