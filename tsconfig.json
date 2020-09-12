@@ -10,7 +10,8 @@
     "lib": ["dom", "esnext"],
     "baseUrl": ".",
     "paths": {
-      "@components/*": ["src/components/*"]
+      "@components/*": ["src/components/*"],
+      "@styles/*": ["src/styles/*"]
     }
   },
   "include": ["./types/**/*", "./gatsby-node/**/*", "./src/**/*"]
