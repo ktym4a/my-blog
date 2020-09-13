@@ -1,11 +1,12 @@
 import React from 'react'
 import styled from '@emotion/styled'
+import { Link } from 'gatsby'
 
-const BlogItem: React.FC = ({ article }) => {
+const BlogItem: React.FC = ({ article, slug }) => {
   return (
-    <Item>
+    <Item to={slug}>
       <ImageContainer>
-        <Image src={article.image} alt="" />
+        <Image src={article.thumbnail.childImageSharp.fluid.src} alt="" />
       </ImageContainer>
       <TextContainer>
         <Title>{article.title}</Title>
@@ -18,7 +19,7 @@ const BlogItem: React.FC = ({ article }) => {
 
 export default BlogItem
 
-const Item = styled.div`
+const Item = styled(Link)`
   border-radius: 15px;
   padding: 25px;
   background: #ededed;
