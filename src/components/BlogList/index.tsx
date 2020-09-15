@@ -3,10 +3,10 @@ import styled from '@emotion/styled'
 
 import BlogItem from '@components/BlogItem'
 
-const BlogList: React.FC = ({ articles }) => {
+const BlogList: React.FC = ({ articles }: any) => {
   return (
     <BlogListContainer>
-      {articles.map((article, index) => {
+      {articles.map((article: any, index: number) => {
         const frontmatter = article.node.frontmatter
         const slug = article.node.fields.slug
         return (

@@ -5,7 +5,7 @@ import BlogList from '@components/BlogList'
 import Section from '@components/Section'
 import Layout from '@components/Layout'
 
-const ArticlesPage = props => {
+const ArticlesPage = (props: any) => {
   const data = useStaticQuery(graphql`
     query {
       allMarkdownRemark {

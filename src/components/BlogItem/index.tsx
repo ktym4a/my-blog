@@ -2,7 +2,12 @@ import React from 'react'
 import styled from '@emotion/styled'
 import { Link } from 'gatsby'
 
-const BlogItem: React.FC = ({ article, slug }) => {
+interface props {
+  article: any
+  slug: any
+}
+
+const BlogItem: React.FC<props> = ({ article, slug }) => {
   return (
     <Item to={slug}>
       <ImageContainer>
