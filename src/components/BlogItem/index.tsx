@@ -2,16 +2,19 @@ import React from 'react'
 import styled from '@emotion/styled'
 import { Link } from 'gatsby'
 
+import Image from '@components/Image'
+
 interface props {
   article: any
   slug: any
 }
 
 const BlogItem: React.FC<props> = ({ article, slug }) => {
+  const imageSource = article.thumbnail.narrow.fluid
   return (
     <Item to={slug}>
       <ImageContainer>
-        <Image src={article.thumbnail.childImageSharp.fluid.src} alt="" />
+        <Image src={imageSource} />
       </ImageContainer>
       <TextContainer>
         <Title>{article.title}</Title>
@@ -39,12 +42,6 @@ const ImageContainer = styled.div`
 
 const TextContainer = styled.div`
   width: 50%;
-`
-
-const Image = styled.img`
-  margin: 0;
-  width: 100%;
-  height: auto;
 `
 
 const Title = styled.h2`

@@ -1,5 +1,15 @@
 const path = require(`path`)
 
+const GatsbyFluid_withWebp = `
+  base64
+  aspectRatio
+  src
+  srcSet
+  srcWebp
+  srcSetWebp
+  sizes
+`
+
 module.exports = async ({ actions: { createPage }, graphql }) => {
   const res = await graphql(`
     query {
@@ -13,8 +23,23 @@ module.exports = async ({ actions: { createPage }, graphql }) => {
               title
               date
               thumbnail {
-                childImageSharp {
-                  fluid {
+                full: childImageSharp {
+                  fluid(maxWidth: 800, quality: 100) {
+                    ${GatsbyFluid_withWebp}
+                  }
+                }
+                regular: childImageSharp {
+                  fluid(maxWidth: 653, quality: 100) {
+                    ${GatsbyFluid_withWebp}
+                  }
+                }
+                narrow: childImageSharp {
+                  fluid(maxWidth: 457, quality: 100) {
+                    ${GatsbyFluid_withWebp}
+                  }
+                }
+                seo: childImageSharp {
+                  fixed(width: 800, quality: 100) {
                     src
                   }
                 }
