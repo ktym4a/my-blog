@@ -37,7 +37,13 @@ const Item = styled(Link)`
 `
 
 const ImageContainer = styled.div`
-  width: 50%;
+  width: 45%;
+  position: relative;
+  height: 220px;
+
+  & > div {
+    height: 100%;
+  }
 `
 
 const TextContainer = styled.div`
