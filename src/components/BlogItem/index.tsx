@@ -6,20 +6,24 @@ import Image from '@components/Image'
 
 interface props {
   article: any
-  slug: any
 }
 
-const BlogItem: React.FC<props> = ({ article, slug }) => {
-  const imageSource = article.thumbnail.narrow.fluid
+const BlogItem: React.FC<props> = ({ article }) => {
+  if (!article) return null
+
+  const frontmatter = article.node.frontmatter
+  const slug = article.node.fields.slug
+
+  const imageSource = frontmatter.thumbnail.narrow.fluid
   return (
-    <Item to={slug}>
+    <Item to={`blog/${slug}`}>
       <ImageContainer>
         <Image src={imageSource} />
       </ImageContainer>
       <TextContainer>
-        <Title>{article.title}</Title>
-        <Excerpt>{article.excerpt}</Excerpt>
-        <MetaData>{article.date}</MetaData>
+        <Title>{frontmatter.title}</Title>
+        <Excerpt>{frontmatter.excerpt}</Excerpt>
+        <MetaData>{frontmatter.date}</MetaData>
       </TextContainer>
     </Item>
   )
@@ -29,15 +33,14 @@ export default BlogItem
 
 const Item = styled(Link)`
   border-radius: 15px;
-  padding: 25px;
+  padding: 20px;
   background: #ededed;
   box-shadow: 5px 5px 5px #c9c9c9, -5px -5px 5px #ffffff;
-  display: flex;
-  margin-bottom: 15px;
+  display: block;
 `
 
 const ImageContainer = styled.div`
-  width: 45%;
+  width: 100%;
   position: relative;
   height: 220px;
 
@@ -47,7 +50,7 @@ const ImageContainer = styled.div`
 `
 
 const TextContainer = styled.div`
-  width: 50%;
+  width: 100%;
 `
 
 const Title = styled.h2`

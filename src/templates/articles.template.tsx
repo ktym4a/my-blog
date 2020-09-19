@@ -1,11 +1,12 @@
-import { graphql, useStaticQuery } from 'gatsby'
 import React from 'react'
+
+import styled from '@emotion/styled'
 
 import BlogList from '@components/BlogList'
 import Section from '@components/Section'
 import Layout from '@components/Layout'
 
-const ArticlesPage = (props: any) => {
+const ArticlesPage: React.FC<any> = (props: any) => {
   const articles = props.pathContext.articles
 
   return (
