@@ -1,5 +1,7 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Global } from '@emotion/core'
+import styled from '@emotion/styled'
+import { useColorMode } from 'theme-ui'
 
 import Footer from '@components/Footer'
 import Header from '@components/Header'
@@ -7,14 +9,26 @@ import Header from '@components/Header'
 import { globalStyles } from '@styles/index'
 
 const Layout: React.FC = ({ children }) => {
+  const [colorMode] = useColorMode()
+
+  useEffect(() => {
+    parent.postMessage({ theme: colorMode }, '*')
+  }, [colorMode])
+
   return (
-    <div>
+    <Container>
       <Global styles={globalStyles} />
       <Header />
       {children}
       <Footer />
-    </div>
+    </Container>
   )
 }
 
 export default Layout
+
+const Container = styled.div`
+  position: relative;
+  background: ${p => p.theme.colors.background};
+  min-height: 100vh;
+`

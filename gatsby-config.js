@@ -7,6 +7,7 @@ module.exports = {
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     `gatsby-image`,
+    `gatsby-plugin-theme-ui`,
     {
       resolve: 'gatsby-source-filesystem',
       options: {
