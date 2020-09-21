@@ -21,10 +21,11 @@ const Header: React.FC = () => {
 
 const HeaderContainer = styled.header`
   color: #282c35;
-  font-weight: blod;
+  font-weight: bolder;
   font-size: 5rem;
   text-align: center;
   padding: 20px;
+  font-family: Montserrat, Merriweather, Georgia, sans-serif;
 `
 
 export default Header
