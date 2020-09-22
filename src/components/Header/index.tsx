@@ -28,24 +28,41 @@ const DarkModeToggle: React.FC<{}> = () => {
 const Header: React.FC = () => {
   return (
     <HeaderContainer>
-      KTYM4a
-      <DarkModeToggle />
+      <HeaderWrapper>
+        <HeaderText>KTYM4a</HeaderText>
+        <DarkModeToggle />
+      </HeaderWrapper>
     </HeaderContainer>
   )
 }
 
 const HeaderContainer = styled.header`
-  color: #282c35;
+  padding: 20px 0;
+`
+
+const HeaderWrapper = styled.div`
+  position: relative;
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 4rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`
+
+const HeaderText = styled.div`
+  color: ${p => p.theme.colors.primary};
   font-weight: bolder;
   font-size: 5rem;
   text-align: center;
-  padding: 20px;
   font-family: ${p => p.theme.fonts.montserrat};
 `
 
 const IconWrapper = styled.button<{ isDark: boolean }>`
   opacity: 0.5;
-  position: relative;
+  position: absolute;
+  right: 6rem;
   border-radius: 5px;
   width: 40px;
   height: 25px;

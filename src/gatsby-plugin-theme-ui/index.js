@@ -10,7 +10,8 @@ const breakpoints = [
 
 const fonts = {
   serif: 'Merriweather, Georgia, Serif',
-  montserrat: 'Montserrat,sans-serif',
+  montserrat: 'Montserrat, sans-serif',
+  NotoSansJP: 'Noto Sans JP, sans-serif',
 }
 
 const colorModeTransition =

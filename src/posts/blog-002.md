@@ -1,5 +1,5 @@
 ---
-title: 'タイトル 002'
+title: 'title002'
 date: '2020-04-04'
 thumbnail: '../images/image_002.jpg'
 excerpt: 'this is excerpt.'

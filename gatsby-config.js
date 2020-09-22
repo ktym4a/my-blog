@@ -37,7 +37,12 @@ module.exports = {
       resolve: 'gatsby-plugin-web-font-loader',
       options: {
         google: {
-          families: ['Montserrat', 'Merriweather', 'Georgia'],
+          families: [
+            'Montserrat:400,700,900',
+            'Merriweather:400,700,900',
+            'Georgia:400,700,900',
+            'Noto+Sans+JP:400,700,900',
+          ],
         },
       },
     },
