@@ -34,8 +34,8 @@ export default BlogItem
 const Item = styled(Link)`
   border-radius: 15px;
   padding: 20px;
-  background: #ededed;
-  box-shadow: 5px 5px 5px #c9c9c9, -5px -5px 5px #ffffff;
+  background: ${p => p.theme.colors.background};
+  box-shadow: ${p => p.theme.colors.neumorphism};
   display: block;
 `
 
