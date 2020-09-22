@@ -56,7 +56,7 @@ const TextContainer = styled.div`
 const Title = styled.h2`
   font-size: 21px;
   transition: color 0.3s ease-in-out;
-  font-family: ${p => p.theme.fonts.serif};
+  font-family: ${p => p.theme.fonts.montserrat};
 `
 
 const Excerpt = styled.p`

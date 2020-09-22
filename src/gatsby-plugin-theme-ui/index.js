@@ -9,8 +9,8 @@ const breakpoints = [
 ]
 
 const fonts = {
-  serif: "'Merriweather', Georgia, Serif",
-  montserrat: "'Merriweather','Georgia',serif",
+  serif: 'Merriweather, Georgia, Serif',
+  montserrat: 'Montserrat,sans-serif',
 }
 
 const colorModeTransition =
