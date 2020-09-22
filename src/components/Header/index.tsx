@@ -52,8 +52,8 @@ const HeaderWrapper = styled.div`
 `
 
 const HeaderText = styled.div`
-  color: ${p => p.theme.colors.primary};
-  font-weight: bolder;
+  color: ${p => p.theme.colors.boldColor};
+  font-weight: 900;
   font-size: 5rem;
   text-align: center;
   font-family: ${p => p.theme.fonts.montserrat};

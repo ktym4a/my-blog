@@ -2,7 +2,7 @@
 title: 'title003'
 date: '2020-04-04'
 thumbnail: '../images/image_003.jpg'
-excerpt: 'this is excerpt.'
+excerpt: 'this is excerpt.this is excerpt.this is excerpt.this is excerpt.this is excerpt.this is excerpt.this is excerpt.this is excerpt.this is excerpt.this is excerpt.this is excerpt.this is excerpt.this is excerpt.'
 ---
 
 Gatsby ブログ作成チュートリアル 003
