@@ -13,7 +13,7 @@ const GatsbyFluid_withWebp = `
 module.exports = async ({ actions: { createPage }, graphql }) => {
   const res = await graphql(`
     query {
-      allMarkdownRemark {
+      allMarkdownRemark(sort: {fields: [frontmatter___date], order: DESC}) {
         edges {
           node {
             fields {
