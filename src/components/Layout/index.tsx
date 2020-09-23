@@ -20,7 +20,6 @@ const Layout: React.FC = ({ children }) => {
       <Global styles={globalStyles} />
       <Header />
       {children}
-      <Footer />
     </Container>
   )
 }
