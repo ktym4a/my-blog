@@ -10,6 +10,8 @@ const GatsbyFluid_withWebp = `
   sizes
 `
 
+const createPaginatedPages = require('gatsby-paginate')
+
 module.exports = async ({ actions: { createPage }, graphql }) => {
   const res = await graphql(`
     query {
@@ -55,12 +57,22 @@ module.exports = async ({ actions: { createPage }, graphql }) => {
   const articlesTemplate = path.resolve('./src/templates/articles.template.tsx')
   const articleTemplate = path.resolve('./src/templates/article.template.tsx')
 
-  createPage({
-    component: articlesTemplate,
-    path: '/',
-    context: {
-      articles: res.data.allMarkdownRemark.edges,
-    },
+  // createPage({
+  //   component: articlesTemplate,
+  //   path: '/',
+  //   context: {
+  //     articles: res.data.allMarkdownRemark.edges,
+  //   },
+  // })
+
+  createPaginatedPages({
+    edges: res.data.allMarkdownRemark.edges,
+    createPage,
+    pageTemplate: articlesTemplate,
+    pageLength: 4,
+    pathPrefix: '/',
+    buildPath: (index, pathPrefix) => (index > 1 ? `/page/${index}` : '/'),
+    context: {},
   })
 
   res.data.allMarkdownRemark.edges.forEach(edge => {
