@@ -34,6 +34,7 @@ export default BlogList
 
 const BlogListContainer = styled.div`
   transition: opacity 0.25s;
+  padding-bottom: 45px;
 `
 
 const BlogListRow = styled.div`
