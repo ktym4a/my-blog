@@ -64,12 +64,7 @@ const PagerUnit = styled(Link)<{ type: string }>`
   transition: 0.3s ease-in-out;
 
   &:hover {
-    background: ${p => p.theme.colors.hoverBackground};
     box-shadow: ${p => p.theme.colors.hoverNeumorphism};
-  }
-
-  &:hover ::before {
-    color: ${p => p.theme.colors.hoverBoldColor};
   }
 
   &::before {

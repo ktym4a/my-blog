@@ -41,13 +41,7 @@ const Item = styled(Link)`
   display: flex;
   flex-direction: column;
   &:hover {
-    transform: translateY(-5px);
-    background: ${p => p.theme.colors.hoverBackground};
     box-shadow: ${p => p.theme.colors.hoverNeumorphism};
-  }
-
-  &:hover h2 {
-    color: ${p => p.theme.colors.hoverBoldColor};
   }
 `
 
