@@ -9,6 +9,7 @@ module.exports = {
     `gatsby-plugin-react-helmet`,
     `gatsby-image`,
     `gatsby-plugin-theme-ui`,
+    `gatsby-plugin-fontawesome-css`,
     {
       resolve: 'gatsby-source-filesystem',
       options: {
