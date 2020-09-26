@@ -10,14 +10,13 @@ interface props {
 
 const BlogItem: React.FC<props> = ({ article }) => {
   if (!article) return null
-
   const frontmatter = article.node.frontmatter
   const slug = article.node.fields.slug
   const timeToRead = article.node.timeToRead
   const imageSource = frontmatter.thumbnail.narrow.fluid
   return (
     <NeumorphismArticle>
-      <Item to={`blog/${slug}`}>
+      <Item to={slug}>
         <ImageContainer>
           <Image src={imageSource} />
         </ImageContainer>
@@ -90,7 +89,7 @@ const Excerpt = styled.p`
 `
 
 const MetaData = styled.div`
-  font-size: 1rem;
+  font-size: 1.2rem;
   color: ${p => p.theme.colors.grey};
   text-align: right;
   margin-top: auto;

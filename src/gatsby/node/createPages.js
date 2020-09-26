@@ -80,7 +80,7 @@ module.exports = async ({ actions: { createPage }, graphql }) => {
     const slug = edge.node.fields.slug
     createPage({
       component: articleTemplate,
-      path: `/blog/${slug}`,
+      path: `${slug}`,
       context: {
         slug,
       },
