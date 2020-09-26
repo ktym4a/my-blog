@@ -23,7 +23,7 @@ module.exports = async ({ actions: { createPage }, graphql }) => {
             }
             frontmatter {
               title
-              date
+              date(formatString: "MMMM D, YYYY")
               thumbnail {
                 full: childImageSharp {
                   fluid(maxWidth: 800, quality: 100) {
@@ -48,6 +48,7 @@ module.exports = async ({ actions: { createPage }, graphql }) => {
               }
               excerpt
             }
+            timeToRead
           }
         }
       }

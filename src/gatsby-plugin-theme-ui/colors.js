@@ -5,6 +5,7 @@ export default {
   accent: '#6166DC',
   hover: 'rgba(0, 0, 0, 0.07)',
   textNormal: '#333',
+  grey: '#73737D',
   neumorphism:
     'inset 0 0 0px #bfbfbf, inset 0 0 0px #ffffff, 3px 3px 6px #bfbfbf, -3px -3px 6px #ffffff',
   hoverNeumorphism:
@@ -17,6 +18,7 @@ export default {
       accent: '#E9DAAC',
       hover: 'rgba(255, 255, 255, 0.07)',
       textNormal: 'hsla(0,0%,100%,0.88)',
+      grey: '#73737D',
       neumorphism:
         'inset 0 0 0px #2a2f38, inset 0 0 0px #424958, 3px 3px 6px #2a2f38, -3px -3px 6px #424958',
       hoverNeumorphism:

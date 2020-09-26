@@ -4,11 +4,7 @@ import { css } from '@emotion/core'
 import { Link } from 'gatsby'
 import { Helmet } from 'react-helmet'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import {
-  faAngleLeft,
-  faAngleRight,
-  faArrowRight,
-} from '@fortawesome/free-solid-svg-icons'
+import { faAngleLeft, faAngleRight } from '@fortawesome/free-solid-svg-icons'
 
 interface props {
   index: number
@@ -56,7 +52,6 @@ const Pagination: React.FC<props> = ({
 }
 
 const Pager: React.FC<pageProps> = ({ to, type, path, active }) => {
-  console.log(active)
   const link = to === 1 ? path : path + 'page/' + to
   return (
     <PagerUnit to={link} type={type} active={active ? 1 : 0}>

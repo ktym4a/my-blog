@@ -1,6 +1,8 @@
 import React from 'react'
 import styled from '@emotion/styled'
 import { Link } from 'gatsby'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faAngleLeft, faAngleRight } from '@fortawesome/free-solid-svg-icons'
 
 import Image from '@components/Image'
 
@@ -13,7 +15,7 @@ const BlogItem: React.FC<props> = ({ article }) => {
 
   const frontmatter = article.node.frontmatter
   const slug = article.node.fields.slug
-
+  const timeToRead = article.node.timeToRead
   const imageSource = frontmatter.thumbnail.narrow.fluid
   return (
     <Item to={`blog/${slug}`}>
@@ -24,7 +26,9 @@ const BlogItem: React.FC<props> = ({ article }) => {
         <Title>{frontmatter.title}</Title>
         <Excerpt>{frontmatter.excerpt}</Excerpt>
       </TextContainer>
-      <MetaData>{frontmatter.date}</MetaData>
+      <MetaData>
+        {frontmatter.date} - {timeToRead} min read
+      </MetaData>
     </Item>
   )
 }
@@ -33,7 +37,7 @@ export default BlogItem
 
 const Item = styled(Link)`
   border-radius: 15px;
-  padding: 20px;
+  padding: 20px 20px 10px;
   background: ${p => p.theme.colors.background};
   box-shadow: ${p => p.theme.colors.neumorphism};
   font-family: ${p => p.theme.fonts.serif};
@@ -78,13 +82,12 @@ const Excerpt = styled.p`
   display: -webkit-box;
   white-space: normal;
   overflow: hidden;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
 `
 
 const MetaData = styled.div`
-  font-weight: 600;
-  font-size: 1.2rem;
-  color: ${p => p.theme.colors.textNormal};
+  font-size: 1rem;
+  color: ${p => p.theme.colors.grey};
   text-align: right;
   margin-top: auto;
 `

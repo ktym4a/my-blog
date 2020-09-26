@@ -45,6 +45,6 @@ const BlogListRow = styled.div`
   column-gap: 30px;
 
   &:not(:last-child) {
-    margin-bottom: 45px;
+    margin-bottom: 30px;
   }
 `
