@@ -52,7 +52,7 @@ const Pagination: React.FC<props> = ({
 }
 
 const Pager: React.FC<pageProps> = ({ to, type, path, active }) => {
-  const link = to === 1 ? path : path + 'page/' + to
+  const link = to === 1 ? path : path + to
   return (
     <PagerUnit to={link} type={type} active={active ? 1 : 0}>
       <ArrowIcon
@@ -69,7 +69,7 @@ const PagerContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  padding-bottom: 50px;
+  padding-bottom: 30px;
   font-family: ${p => p.theme.fonts.serif};
 `
 
