@@ -1,4 +1,6 @@
 import React from 'react'
+import { Link } from 'gatsby'
+
 import { useColorMode } from 'theme-ui'
 import styled from '@emotion/styled'
 import { commonWidth } from '@styles/index'
@@ -30,7 +32,7 @@ const Header: React.FC = () => {
   return (
     <HeaderContainer>
       <HeaderWrapper>
-        <HeaderText>KTYM4a</HeaderText>
+        <HeaderText to="/">KTYM4a</HeaderText>
         <DarkModeToggle />
       </HeaderWrapper>
     </HeaderContainer>
@@ -49,7 +51,7 @@ const HeaderWrapper = styled.div`
   align-items: center;
 `
 
-const HeaderText = styled.div`
+const HeaderText = styled(Link)`
   color: ${p => p.theme.colors.boldColor};
   font-weight: 900;
   font-size: 5rem;
