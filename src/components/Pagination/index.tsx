@@ -4,7 +4,11 @@ import { css } from '@emotion/core'
 import { Link } from 'gatsby'
 import { Helmet } from 'react-helmet'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faAngleLeft, faArrowRight } from '@fortawesome/free-solid-svg-icons'
+import {
+  faAngleLeft,
+  faAngleRight,
+  faArrowRight,
+} from '@fortawesome/free-solid-svg-icons'
 
 interface props {
   index: number
@@ -38,7 +42,9 @@ const Pagination: React.FC<props> = ({
         path={pathPrefix}
         active={first ? 1 : 0}
       />
-      {index} / {pageCount}
+      <PagerText>
+        {index} / {pageCount}
+      </PagerText>
       <Pager
         type={'next'}
         to={index + 1}
@@ -54,7 +60,10 @@ const Pager: React.FC<pageProps> = ({ to, type, path, active }) => {
   const link = to === 1 ? path : path + 'page/' + to
   return (
     <PagerUnit to={link} type={type} active={active ? 1 : 0}>
-      <FontAwesomeIcon icon={faAngleLeft} />
+      <ArrowIcon
+        icon={type === 'prev' ? faAngleLeft : faAngleRight}
+        size="lg"
+      />
     </PagerUnit>
   )
 }
@@ -67,6 +76,10 @@ const PagerContainer = styled.div`
   justify-content: center;
   padding-bottom: 50px;
   font-family: ${p => p.theme.fonts.serif};
+`
+
+const PagerText = styled.span`
+  color: ${p => p.theme.colors.textNormal};
 `
 
 const PagerUnit = styled(Link)<{ type: string; active: number }>`
@@ -85,15 +98,11 @@ const PagerUnit = styled(Link)<{ type: string; active: number }>`
   &:hover {
     box-shadow: ${p => p.theme.colors.hoverNeumorphism};
   }
-
-  &::before {
-    ${p => (p.active === 1 ? NotActiveArrow : ActiveArrow)}
-    ${p => (p.type === 'prev' ? PrevArrow : NextArrow)}
-  }
 `
 
 const NotActivePager = p => css`
   pointer-events: none;
+  opacity: 0;
 `
 
 const ActivePager = p => css`
@@ -101,26 +110,6 @@ const ActivePager = p => css`
   box-shadow: ${p.theme.colors.neumorphism};
 `
 
-const NotActiveArrow = css`
-  display: none;
-`
-
-const ActiveArrow = p => css`
-  content: '';
-  position: absolute;
-  display: block;
-  width: 15px;
-  height: 15px;
-  border-top: solid 3px ${p.theme.colors.boldColor};
-  border-right: solid 3px ${p.theme.colors.boldColor};
-`
-
-const PrevArrow = p => css`
-  -webkit-transform: rotate(225deg);
-  transform: rotate(225deg);
-`
-
-const NextArrow = p => css`
-  -webkit-transform: rotate(45deg);
-  transform: rotate(45deg);
+const ArrowIcon = styled(FontAwesomeIcon)`
+  color: ${p => p.theme.colors.boldColor};
 `
