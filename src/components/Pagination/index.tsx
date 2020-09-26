@@ -6,7 +6,11 @@ import { Helmet } from 'react-helmet'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faAngleLeft, faAngleRight } from '@fortawesome/free-solid-svg-icons'
 
-interface props {
+interface paginationProps {
+  pageContext: pageContextProps
+}
+
+interface pageContextProps {
   index: number
   first: boolean
   last: boolean
@@ -21,18 +25,13 @@ interface pageProps {
   active: number
 }
 
-const Pagination: React.FC<props> = ({
-  index,
-  first,
-  last,
-  pageCount,
-  pathPrefix,
-}) => {
-  if (pageCount <= 1) return null
+const Pagination: React.FC<paginationProps> = ({ pageContext }) => {
+  if (pageContext.pageCount <= 1) return null
 
   return (
-    <PagerContainer>
-      <Pager
+    <PagerSection>
+      <Pager {...pageContext} />
+      {/* <Pager
         type={'prev'}
         to={index - 1}
         path={pathPrefix}
@@ -46,12 +45,40 @@ const Pagination: React.FC<props> = ({
         to={index + 1}
         path={pathPrefix}
         active={last ? 1 : 0}
-      />
-    </PagerContainer>
+      /> */}
+    </PagerSection>
   )
 }
 
-const Pager: React.FC<pageProps> = ({ to, type, path, active }) => {
+const Pager: React.FC<pageContextProps> = ({
+  index,
+  first,
+  last,
+  pageCount,
+  pathPrefix,
+}) => {
+  return (
+    <PaginationNav>
+      <PagerLink
+        type={'prev'}
+        to={index - 1}
+        path={pathPrefix}
+        active={first ? 1 : 0}
+      />
+      <PagerText>
+        {index} / {pageCount}
+      </PagerText>
+      <PagerLink
+        type={'next'}
+        to={index + 1}
+        path={pathPrefix}
+        active={last ? 1 : 0}
+      />
+    </PaginationNav>
+  )
+}
+
+const PagerLink: React.FC<pageProps> = ({ to, type, path, active }) => {
   const link = to === 1 ? path : path + to
   return (
     <PagerUnit to={link} type={type} active={active ? 1 : 0}>
@@ -65,12 +92,15 @@ const Pager: React.FC<pageProps> = ({ to, type, path, active }) => {
 
 export default Pagination
 
-const PagerContainer = styled.div`
+const PagerSection = styled.section`
+  padding-bottom: 30px;
+  font-family: ${p => p.theme.fonts.serif};
+`
+
+const PaginationNav = styled.nav`
   display: flex;
   align-items: center;
   justify-content: center;
-  padding-bottom: 30px;
-  font-family: ${p => p.theme.fonts.serif};
 `
 
 const PagerText = styled.span`

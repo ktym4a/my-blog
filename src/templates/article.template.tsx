@@ -2,7 +2,7 @@ import { graphql, useStaticQuery } from 'gatsby'
 import React from 'react'
 
 import BlogList from '@components/BlogList'
-import Section from '@components/Section'
+import Main from '@components/Main'
 import Layout from '@components/Layout'
 
 export const query = graphql`
@@ -21,11 +21,11 @@ const ArticlePage = props => {
   const data = props.data.markdownRemark
   return (
     <Layout>
-      <Section>
+      <Main>
         <h1>{data.frontmatter.title}</h1>
         <p>{data.frontmatter.date}</p>
         <div dangerouslySetInnerHTML={{ __html: data.html }}></div>
-      </Section>
+      </Main>
     </Layout>
   )
 }

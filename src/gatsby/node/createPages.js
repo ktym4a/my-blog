@@ -70,7 +70,7 @@ module.exports = async ({ actions: { createPage }, graphql }) => {
     edges: res.data.allMarkdownRemark.edges,
     createPage,
     pageTemplate: articlesTemplate,
-    pageLength: 6,
+    pageLength: 2,
     pathPrefix: '/',
     buildPath: (index, pathPrefix) => (index > 1 ? `/${index}` : '/'),
     context: {},

@@ -16,26 +16,27 @@ const BlogItem: React.FC<props> = ({ article }) => {
   const timeToRead = article.node.timeToRead
   const imageSource = frontmatter.thumbnail.narrow.fluid
   return (
-    <Item to={`blog/${slug}`}>
-      <ImageContainer>
-        <Image src={imageSource} />
-      </ImageContainer>
-      <TextContainer>
-        <Title>{frontmatter.title}</Title>
-        <Excerpt>{frontmatter.excerpt}</Excerpt>
-      </TextContainer>
-      <MetaData>
-        {frontmatter.date} - {timeToRead} min read
-      </MetaData>
-    </Item>
+    <NeumorphismArticle>
+      <Item to={`blog/${slug}`}>
+        <ImageContainer>
+          <Image src={imageSource} />
+        </ImageContainer>
+        <TextContainer>
+          <Title>{frontmatter.title}</Title>
+          <Excerpt>{frontmatter.excerpt}</Excerpt>
+        </TextContainer>
+        <MetaData>
+          {frontmatter.date} - {timeToRead} min read
+        </MetaData>
+      </Item>
+    </NeumorphismArticle>
   )
 }
 
 export default BlogItem
 
-const Item = styled(Link)`
+const NeumorphismArticle = styled.article`
   border-radius: 15px;
-  padding: 20px 20px 10px;
   background: ${p => p.theme.colors.background};
   box-shadow: ${p => p.theme.colors.neumorphism};
   font-family: ${p => p.theme.fonts.serif};
@@ -45,6 +46,10 @@ const Item = styled(Link)`
   &:hover {
     box-shadow: ${p => p.theme.colors.hoverNeumorphism};
   }
+`
+
+const Item = styled(Link)`
+  padding: 20px 20px 10px;
 `
 
 const ImageContainer = styled.div`
