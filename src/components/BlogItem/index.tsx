@@ -41,8 +41,6 @@ const NeumorphismArticle = styled.article`
   box-shadow: ${p => p.theme.colors.neumorphism};
   font-family: ${p => p.theme.fonts.serif};
   transition: 0.3s ease-in-out;
-  display: flex;
-  flex-direction: column;
   &:hover {
     box-shadow: ${p => p.theme.colors.hoverNeumorphism};
   }
@@ -50,6 +48,9 @@ const NeumorphismArticle = styled.article`
 
 const Item = styled(Link)`
   padding: 20px 20px 10px;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 `
 
 const ImageContainer = styled.div`

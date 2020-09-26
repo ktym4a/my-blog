@@ -94,7 +94,6 @@ export default Pagination
 
 const PagerSection = styled.section`
   padding-bottom: 30px;
-  font-family: ${p => p.theme.fonts.serif};
 `
 
 const PaginationNav = styled.nav`
@@ -105,6 +104,8 @@ const PaginationNav = styled.nav`
 
 const PagerText = styled.span`
   color: ${p => p.theme.colors.textNormal};
+  font-size: 1.4rem;
+  line-height: 1.4rem;
 `
 
 const PagerUnit = styled(Link)<{ type: string; active: number }>`
@@ -117,7 +118,7 @@ const PagerUnit = styled(Link)<{ type: string; active: number }>`
   height: 33px;
   border-radius: 50%;
   transition: 0.3s ease-in-out;
-  ${p => (p.type === 'prev' ? `margin-right: 10px;` : `margin-left: 10px;`)}
+  ${p => (p.type === 'prev' ? `margin-right: 15px;` : `margin-left: 15px;`)}
   ${p => (p.active === 1 ? NotActivePager : ActivePager)}
 
   &:hover {
