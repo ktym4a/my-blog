@@ -1,10 +1,8 @@
 import styled from '@emotion/styled'
+import { commonWidth } from '@styles/index'
 
 const Main = styled.main`
-  width: 100%;
-  max-width: 900px;
-  margin: 0 auto;
-  padding: 0 4rem;
+  ${commonWidth}
 `
 
 export default Main

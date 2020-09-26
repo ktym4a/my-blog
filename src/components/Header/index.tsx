@@ -1,6 +1,7 @@
 import React from 'react'
 import { useColorMode } from 'theme-ui'
 import styled from '@emotion/styled'
+import { commonWidth } from '@styles/index'
 
 const DarkModeToggle: React.FC<{}> = () => {
   const [colorMode, setColorMode] = useColorMode()
@@ -41,11 +42,8 @@ const HeaderContainer = styled.header`
 `
 
 const HeaderWrapper = styled.div`
+  ${commonWidth}
   position: relative;
-  width: 100%;
-  max-width: 900px;
-  margin: 0 auto;
-  padding: 0 4rem;
   display: flex;
   justify-content: center;
   align-items: center;
