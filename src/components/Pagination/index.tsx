@@ -31,21 +31,6 @@ const Pagination: React.FC<paginationProps> = ({ pageContext }) => {
   return (
     <PagerSection>
       <Pager {...pageContext} />
-      {/* <Pager
-        type={'prev'}
-        to={index - 1}
-        path={pathPrefix}
-        active={first ? 1 : 0}
-      />
-      <PagerText>
-        {index} / {pageCount}
-      </PagerText>
-      <Pager
-        type={'next'}
-        to={index + 1}
-        path={pathPrefix}
-        active={last ? 1 : 0}
-      /> */}
     </PagerSection>
   )
 }
@@ -79,7 +64,7 @@ const Pager: React.FC<pageContextProps> = ({
 }
 
 const PagerLink: React.FC<pageProps> = ({ to, type, path, active }) => {
-  const link = to === 1 ? path : path + to
+  const link = to === 1 ? path : path + 'page/' + to
   return (
     <PagerUnit to={link} type={type} active={active ? 1 : 0}>
       <ArrowIcon
