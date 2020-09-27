@@ -1,8 +1,8 @@
 ---
-title: 'title004'
-date: '2020-06-07'
-thumbnail: '../images/image_004.jpg'
-excerpt: 'this is excerpt.'
+title: 'title006'
+date: '2020-04-03'
+thumbnail: '../images/image_001.jpg'
+excerpt: 'this is excerpt.this is excerpt.this is excerpt.this is excerpt.this is excerpt.this is excerpt.this is excerpt.this is excerpt.this is excerpt.this is excerpt.this is excerpt.this is excerpt.this is excerpt.'
 ---
 
 ---
@@ -251,4 +251,4 @@ It converts "HTML", but keep intact partial entries like "xxxHTMLyyy" and so on.
 *here be dragons*
 :::
 
-![Sample](../images/image_004.jpg)
+![Sample](../images/image_001.jpg)
