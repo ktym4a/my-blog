@@ -89,6 +89,7 @@ const PaginationNav = styled.nav`
 
 const PagerText = styled.span`
   color: ${p => p.theme.colors.textNormal};
+  font-family: ${p => p.theme.fonts.serif};
   font-size: 1.4rem;
   line-height: 1.4rem;
 `

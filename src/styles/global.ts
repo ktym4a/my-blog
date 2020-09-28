@@ -33,7 +33,9 @@ export const globalStyles = css`
     line-height: 1.4;
   }
   body {
-    font-family: 'Merriweather, Georgia, Serif';
+    font-family: '-apple-system', 'BlinkMacSystemFont', 'San Francisco',
+      'Helvetica Neue', 'Helvetica', 'Ubuntu', 'Roboto', 'Noto', 'Segoe UI',
+      'Arial', sans-serif;
     font-size: 1.6rem;
     margin: 0;
     font-weight: 400;

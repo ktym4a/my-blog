@@ -20,6 +20,7 @@ const Layout: React.FC = ({ children }) => {
       <Global styles={globalStyles} />
       <Header />
       {children}
+      <Footer />
     </Container>
   )
 }
@@ -31,4 +32,6 @@ const Container = styled.div`
   background: ${p => p.theme.colors.background};
   transition: ${p => p.theme.colorModeTransition};
   min-height: 100vh;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
 `
