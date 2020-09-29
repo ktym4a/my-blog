@@ -1,7 +1,6 @@
 import { graphql, useStaticQuery } from 'gatsby'
 import React from 'react'
 
-import BlogList from '@components/BlogList'
 import Main from '@components/Main'
 import Layout from '@components/Layout'
 
