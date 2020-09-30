@@ -32,7 +32,7 @@ const Header: React.FC = () => {
   return (
     <HeaderContainer>
       <HeaderWrapper>
-        <HeaderText to="/">KTYM4a</HeaderText>
+        <HeaderText to="/">KTYM4aa</HeaderText>
         <DarkModeToggle />
       </HeaderWrapper>
     </HeaderContainer>
