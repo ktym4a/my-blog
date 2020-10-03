@@ -1,5 +1,6 @@
 import React from 'react'
 
+import { MDXRenderer } from 'gatsby-plugin-mdx'
 import { MDXProvider } from '@mdx-js/react'
 
 import styled from '@emotion/styled'
@@ -39,8 +40,8 @@ const MDX: React.FC<MDXProps> = ({ content }) => {
   const [colorMode] = useColorMode()
 
   return (
-    <MDXProvider components={components} isDark={colorMode === 'dark'}>
-      <MDXBody>{content}</MDXBody>
+    <MDXProvider components={components}>
+      <MDXRenderer isDark={colorMode === 'dark'}>{content}</MDXRenderer>
     </MDXProvider>
   )
 }

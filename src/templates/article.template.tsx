@@ -19,6 +19,7 @@ import MDXRenderer from '@components/MDXRenderer'
 
 const ArticlePage = ({ pageContext }) => {
   const { article } = pageContext
+  console.log(article.node.body)
   return (
     <Layout>
       <Main>
