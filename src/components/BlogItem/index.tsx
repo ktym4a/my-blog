@@ -11,12 +11,12 @@ interface props {
 const BlogItem: React.FC<props> = ({ article }) => {
   if (!article) return null
   const frontmatter = article.node.frontmatter
-  const slug = article.node.fields.slug
+  const slug = article.node.slug
   const timeToRead = article.node.timeToRead
   const imageSource = frontmatter.thumbnail.narrow.fluid
   return (
     <NeumorphismArticle>
-      <Item to={slug}>
+      <Item to={`/${slug}`}>
         <ImageContainer>
           <Image src={imageSource} />
         </ImageContainer>

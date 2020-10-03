@@ -7,7 +7,7 @@ const BlogList: React.FC = ({ articles }: any) => {
   return (
     <ArticleSection>
       {articles.map((article: any, index: number) => {
-        return <BlogItem article={article} key={index} />
+        return <BlogItem article={article} key={article.node.id} />
       })}
     </ArticleSection>
   )

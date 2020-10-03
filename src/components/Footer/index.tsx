@@ -1,7 +1,6 @@
 import React from 'react'
 import styled from '@emotion/styled'
 import { commonWidth } from '@styles/index'
-import { Link } from 'gatsby'
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faGithub, faFacebook } from '@fortawesome/free-brands-svg-icons'
@@ -12,11 +11,11 @@ const Footer: React.FC = () => {
       <FooterWrapper>
         <Copylight>© 2020 KTYM4a</Copylight>
         <BrandIcons>
-          <SNSLink to="https://github.com/ktym4a/" target="_blank">
+          <SNSLink href="https://github.com/ktym4a/" target="_blank">
             <BrandIcon icon={faGithub} size="lg" />
           </SNSLink>
           <SNSLink
-            to="https://www.facebook.com/profile.php?id=100022627637039"
+            href="https://www.facebook.com/profile.php?id=100022627637039"
             target="_blank"
           >
             <BrandIcon icon={faFacebook} size="lg" />
@@ -59,7 +58,7 @@ const BrandIcon = styled(FontAwesomeIcon)`
   color: ${p => p.theme.colors.boldColor};
 `
 
-const SNSLink = styled(Link)`
+const SNSLink = styled.a`
   margin-right: 15px;
   transition: 0.3s ease-in-out;
   opacity: 0.5;

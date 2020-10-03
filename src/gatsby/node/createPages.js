@@ -15,14 +15,10 @@ const createPaginatedPages = require('gatsby-paginate')
 module.exports = async ({ actions: { createPage }, graphql }) => {
   const res = await graphql(`
     query {
-      allMarkdownRemark(sort: {fields: [frontmatter___date], order: DESC}) {
+      allMdx(sort: {fields: [frontmatter___date], order: DESC}) {
         edges {
           node {
-            fields {
-              slug
-            }
             frontmatter {
-              title
               date(formatString: "MMMM D, YYYY")
               thumbnail {
                 full: childImageSharp {
@@ -48,6 +44,9 @@ module.exports = async ({ actions: { createPage }, graphql }) => {
               }
               excerpt
             }
+            id
+            slug
+            body
             timeToRead
           }
         }
@@ -59,7 +58,7 @@ module.exports = async ({ actions: { createPage }, graphql }) => {
   const articleTemplate = path.resolve('./src/templates/article.template.tsx')
 
   createPaginatedPages({
-    edges: res.data.allMarkdownRemark.edges,
+    edges: res.data.allMdx.edges,
     createPage,
     pageTemplate: articlesTemplate,
     pageLength: 6,
@@ -68,13 +67,13 @@ module.exports = async ({ actions: { createPage }, graphql }) => {
     context: {},
   })
 
-  res.data.allMarkdownRemark.edges.forEach(edge => {
-    const slug = edge.node.fields.slug
+  res.data.allMdx.edges.forEach(edge => {
+    const slug = edge.node.slug
     createPage({
       component: articleTemplate,
       path: `${slug}`,
       context: {
-        slug,
+        article: edge,
       },
     })
   })
