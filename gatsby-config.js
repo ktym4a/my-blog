@@ -24,17 +24,7 @@ module.exports = {
         path: `${__dirname}/src/posts`,
       },
     },
-    {
-      resolve: `gatsby-transformer-remark`,
-      options: {
-        plugins: [
-          {
-            resolve: `gatsby-remark-images`,
-            options: { maxWidth: 640 },
-          },
-        ],
-      },
-    },
+    `gatsby-transformer-remark`,
     {
       resolve: 'gatsby-plugin-web-font-loader',
       options: {
@@ -52,6 +42,17 @@ module.exports = {
       resolve: `gatsby-plugin-mdx`,
       options: {
         extensions: [`.mdx`, `.md`],
+        gatsbyRemarkPlugins: [
+          {
+            resolve: `gatsby-remark-images`,
+            options: {
+              maxWidth: 10000,
+              linkImagesToOriginal: false,
+              quality: 100,
+              withWebp: true,
+            },
+          },
+        ],
       },
     },
   ],

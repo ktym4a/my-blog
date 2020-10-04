@@ -26,12 +26,7 @@ module.exports = async ({ actions: { createPage }, graphql }) => {
                     ${GatsbyFluid_withWebp}
                   }
                 }
-                regular: childImageSharp {
-                  fluid(maxWidth: 653, quality: 100) {
-                    ${GatsbyFluid_withWebp}
-                  }
-                }
-                narrow: childImageSharp {
+                list: childImageSharp {
                   fluid(maxWidth: 457, quality: 100) {
                     ${GatsbyFluid_withWebp}
                   }
