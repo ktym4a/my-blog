@@ -56,6 +56,7 @@ const HeaderText = styled(Link)`
   font-weight: 900;
   font-size: 5rem;
   text-align: center;
+  transition: color 0.3s ease-in-out;
   font-family: ${p => p.theme.fonts.montserrat};
 `
 
@@ -69,7 +70,7 @@ const IconWrapper = styled.button<{ isDark: boolean }>`
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: opacity 0.3s ease;
+  transition: opacity 0.3s ease-in-out;
   margin-left: 30px;
   &:hover {
     opacity: 1;

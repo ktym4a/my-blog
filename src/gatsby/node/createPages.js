@@ -20,7 +20,7 @@ module.exports = async ({ actions: { createPage }, graphql }) => {
           node {
             frontmatter {
               date(formatString: "MMMM D, YYYY")
-              thumbnail {
+              post_img {
                 full: childImageSharp {
                   fluid(maxWidth: 800, quality: 100) {
                     ${GatsbyFluid_withWebp}
@@ -38,6 +38,7 @@ module.exports = async ({ actions: { createPage }, graphql }) => {
                 }
               }
               excerpt
+              title
             }
             id
             slug

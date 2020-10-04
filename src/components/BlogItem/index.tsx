@@ -13,7 +13,7 @@ const BlogItem: React.FC<props> = ({ article }) => {
   const frontmatter = article.node.frontmatter
   const slug = article.node.slug
   const timeToRead = article.node.timeToRead
-  const imageSource = frontmatter.thumbnail.list.fluid
+  const imageSource = frontmatter.post_img.list.fluid
   return (
     <NeumorphismArticle>
       <Item to={`/${slug}`}>

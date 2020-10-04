@@ -1,7 +1,7 @@
 ---
 title: 'title001'
 date: '2020-09-24'
-thumbnail: '../images/image_001.jpg'
+post_img: '../images/image_001.jpg'
 excerpt: 'this is excerpt.this is excerpt.this is excerpt.this is excerpt.this is excerpt.this is excerpt.this is excerpt.this is excerpt.this is excerpt.this is excerpt.this is excerpt.this is excerpt.this is excerpt.'
 ---
 
