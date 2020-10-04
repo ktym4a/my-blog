@@ -32,9 +32,6 @@ const ArticlePage = ({ pageContext }) => {
             {article_data.frontmatter.date} - {article_data.timeToRead} min read
           </MetaData>
         </TitleContainer>
-        <ArticleImageContainer>
-          <Image src={article_data.frontmatter.post_img.list.fluid} />
-        </ArticleImageContainer>
         <MDXRenderer content={article_data.body} />
       </Main>
     </Layout>
@@ -56,10 +53,6 @@ const MetaData = styled.div`
 
 const TitleContainer = styled.div`
   margin-bottom: 3rem;
-`
-
-const ArticleImageContainer = styled.div`
-  width: 100%;
 `
 
 export default ArticlePage
