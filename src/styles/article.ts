@@ -2,7 +2,7 @@ import styled from '@emotion/styled'
 import { css } from '@emotion/core'
 
 const articleMarginBottom = css`
-  margin-bottom: 1.75rem;
+  margin-bottom: 2.5rem;
 `
 
 const hProps = css`
@@ -36,13 +36,10 @@ const articleImage = styled.img`
 const articleAnchor = styled.a`
   transition: ${p => p.theme.colorModeTransition};
   color: ${p => p.theme.colors.textColor};
+  text-decoration: underline;
   &:visited {
     color: ${p => p.theme.colors.textColor};
     opacity: 0.85;
-  }
-  &:hover,
-  &:focus {
-    text-decoration: underline;
   }
 `
 
@@ -128,7 +125,7 @@ const Paragraph = styled.p`
 `
 
 const Table = styled.table`
-  margin-bottom: 2rem;
+  margin-bottom: 2.5rem;
   position: relative;
   line-height: 1.65;
   color: ${p => p.theme.colors.grey};

@@ -52,6 +52,16 @@ module.exports = {
               withWebp: true,
             },
           },
+          {
+            resolve: 'gatsby-remark-prismjs',
+            options: {
+              classPrefix: 'language-',
+              inlineCodeMarker: {
+                tsx: 'tsx',
+              },
+              aliases: {},
+            },
+          },
         ],
       },
     },

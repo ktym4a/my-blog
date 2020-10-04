@@ -4,9 +4,9 @@ import { MDXRenderer } from 'gatsby-plugin-mdx'
 import { MDXProvider } from '@mdx-js/react'
 
 import styled from '@emotion/styled'
-import { css } from '@emotion/core'
+import { jsx, css } from '@emotion/core'
 import { useColorMode } from 'theme-ui'
-import { articleCSS } from '@styles/index'
+import { articleCSS, Prism } from '@styles/index'
 
 const components = {
   img: articleCSS.articleImage,
@@ -22,7 +22,7 @@ const components = {
   ul: articleCSS.uList,
   ol: articleCSS.oList,
   p: articleCSS.Paragraph,
-  // code: Code.Prism,
+  // code: Prism,
   // pre: Code.Pre,
   table: articleCSS.Table,
   thead: articleCSS.TableHead,

@@ -49,7 +49,8 @@ const ArticleTitle = styled.h1`
 
 const ArticleContainer = styled.article`
   font-family: ${p => p.theme.fonts.serif};
-  font-size: 1.5rem;
+  font-size: 1.7rem;
+  line-height: 2.5rem;
 
   & *:last-child {
     margin-bottom: 0;
