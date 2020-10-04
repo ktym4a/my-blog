@@ -26,7 +26,7 @@ export const globalStyles = css`
     -ms-overflow-style: -ms-autohiding-scrollbar;
     box-sizing: border-box;
     -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+    -moz-osx-font-smoothing: greyscale;
     text-rendering: optimizeLegibility;
     cursor: default;
     font-size: 0.625rem;

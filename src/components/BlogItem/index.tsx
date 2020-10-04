@@ -72,7 +72,7 @@ const Title = styled.h2`
   font-family: ${p => p.theme.fonts.montserrat};
   color: ${p => p.theme.colors.boldColor};
   margin-bottom: 2.5px;
-  transition: color 0.3s ease-in-out;
+  transition: ${p => p.theme.colors.colorModeTransition};
 `
 
 const Excerpt = styled.p`

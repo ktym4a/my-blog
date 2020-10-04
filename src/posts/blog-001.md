@@ -64,11 +64,17 @@ _This is italic text_
 
 ## Blockquotes
 
-> Blockquotes can also be nested...
+> Blockquotes can also be nested...Blockquotes can also be nested...Blockquotes can also be nested...Blockquotes can also be nested...Blockquotes can also be nested...Blockquotes can also be nested...Blockquotes can also be nested...Blockquotes can also be nested...Blockquotes can also be nested...Blockquotes can also be nested...Blockquotes can also be nested...Blockquotes can also be nested...Blockquotes can also be nested...Blockquotes can also be nested...Blockquotes can also be nested...
 >
 > > ...by using additional greater-than signs right next to each other...
 > >
 > > > ...or with spaces between arrows.
+
+> Block quotes are
+> written like so.
+>
+> They can span multiple paragraphs,
+> if you like.
 
 ## Lists
 
@@ -87,14 +93,17 @@ Ordered
 1. Lorem ipsum dolor sit amet
 2. Consectetur adipiscing elit
 3. Integer molestie lorem at massa
-
 4. You can use sequential numbers...
 5. ...or keep all the numbers as `1.`
+6. Lorem ipsum dolor sit amet
+7. Consectetur adipiscing elit
+8. Integer molestie lorem at massa
+9. You can use sequential numbers...
 
 Start numbering with offset:
 
-57. foo
-1. bar
+1.  foo
+2.  bar
 
 ## Code
 

@@ -56,7 +56,7 @@ const HeaderText = styled(Link)`
   font-weight: 900;
   font-size: 5rem;
   text-align: center;
-  transition: color 0.3s ease-in-out;
+  transition: ${p => p.theme.colors.colorModeTransition};
   font-family: ${p => p.theme.fonts.montserrat};
 `
 
@@ -82,7 +82,6 @@ const IconWrapper = styled.button<{ isDark: boolean }>`
     top: -30%;
     width: 100%;
     height: 160%;
-    border: 2px solid ${p => p.theme.colors.accent};
     background: rgba(255, 255, 255, 0.01);
     border-radius: 5px;
   }

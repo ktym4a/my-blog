@@ -14,8 +14,7 @@ const fonts = {
   NotoSansJP: 'Noto Sans JP, sans-serif',
 }
 
-const colorModeTransition =
-  'background 0.25s var(--ease-in-out-quad), color 0.25s var(--ease-in-out-quad)'
+const colorModeTransition = 'background 0.3s ease-in-out,color 0.3s ease-in-out'
 
 export default merge({
   initialColorMode: 'light',

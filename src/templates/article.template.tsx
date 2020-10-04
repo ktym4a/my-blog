@@ -6,7 +6,6 @@ import styled from '@emotion/styled'
 import Main from '@components/Main'
 import Layout from '@components/Layout'
 import MDXRenderer from '@components/MDXRenderer'
-import Image from '@components/Image'
 
 // export const query = graphql`
 //   query($slug: String!) {
@@ -32,7 +31,9 @@ const ArticlePage = ({ pageContext }) => {
             {article_data.frontmatter.date} - {article_data.timeToRead} min read
           </MetaData>
         </TitleContainer>
-        <MDXRenderer content={article_data.body} />
+        <ArticleContainer>
+          <MDXRenderer content={article_data.body} />
+        </ArticleContainer>
       </Main>
     </Layout>
   )
@@ -43,7 +44,16 @@ const ArticleTitle = styled.h1`
   font-weight: 900;
   font-family: ${p => p.theme.fonts.montserrat};
   color: ${p => p.theme.colors.textNormal};
-  transition: color 0.3s ease-in-out;
+  transition: ${p => p.theme.colors.colorModeTransition};
+`
+
+const ArticleContainer = styled.article`
+  font-family: ${p => p.theme.fonts.serif};
+  font-size: 1.5rem;
+
+  & *:last-child {
+    margin-bottom: 0;
+  }
 `
 
 const MetaData = styled.div`
@@ -53,6 +63,7 @@ const MetaData = styled.div`
 
 const TitleContainer = styled.div`
   margin-bottom: 3rem;
+  font-family: ${p => p.theme.fonts.serif};
 `
 
 export default ArticlePage
