@@ -1,9 +1,8 @@
 import { css } from '@emotion/core'
-import styled from '@emotion/styled'
 
-const prismCSS = css`
-  code,
-  pre {
+export const prismCSS = css`
+  code[class*='language-'],
+  pre[class*='language-'] {
     color: white;
     background: none;
     font-family: Consolas, Menlo, Monaco, source-code-pro, Courier New,
@@ -28,36 +27,36 @@ const prismCSS = css`
   }
 
   /* Code blocks */
-  pre {
+  pre[class*='language-'] {
     overflow: auto;
     padding: 1.3125rem;
   }
 
-  pre::-moz-selection {
+  pre[class*='language-']::-moz-selection {
     /* Firefox */
     background: hsl(207, 4%, 16%);
   }
 
-  pre::selection {
+  pre[class*='language-']::selection {
     /* Safari */
     background: hsl(207, 4%, 16%);
   }
 
   /* Text Selection colour */
-  pre::-moz-selection,
-  pre ::-moz-selection {
+  pre[class*='language-']::-moz-selection,
+  pre[class*='language-'] ::-moz-selection {
     text-shadow: none;
     background: hsla(0, 0%, 100%, 0.15);
   }
 
-  pre::selection,
-  pre ::selection {
+  pre[class*='language-']::selection,
+  pre[class*='language-'] ::selection {
     text-shadow: none;
     background: hsla(0, 0%, 100%, 0.15);
   }
 
   /* Inline code */
-  :not(pre) > code {
+  :not(pre) > code[class*='language-'] {
     border-radius: 0.3em;
     background: var(--inlineCode-bg);
     color: var(--inlineCode-text);
@@ -150,8 +149,4 @@ const prismCSS = css`
     -webkit-overflow-scrolling: touch;
     overflow: auto;
   }
-`
-
-export const Prism = styled.code`
-  ${prismCSS}
 `

@@ -6,7 +6,7 @@ import { MDXProvider } from '@mdx-js/react'
 import styled from '@emotion/styled'
 import { jsx, css } from '@emotion/core'
 import { useColorMode } from 'theme-ui'
-import { articleCSS, Prism } from '@styles/index'
+import { articleCSS, prismCSS } from '@styles/index'
 
 const components = {
   img: articleCSS.articleImage,
@@ -22,13 +22,10 @@ const components = {
   ul: articleCSS.uList,
   ol: articleCSS.oList,
   p: articleCSS.Paragraph,
-  // code: Prism,
-  // pre: Code.Pre,
   table: articleCSS.Table,
   thead: articleCSS.TableHead,
   th: articleCSS.TableHeadCell,
   td: articleCSS.TableCell,
-  // p: props => <p {...props} style={{ color: 'rebeccapurple' }} />,
 }
 
 interface MDXProps {
@@ -39,10 +36,16 @@ const MDX: React.FC<MDXProps> = ({ content }) => {
   const [colorMode] = useColorMode()
 
   return (
-    <MDXProvider components={components}>
-      <MDXRenderer>{content}</MDXRenderer>
-    </MDXProvider>
+    <MDXBody>
+      <MDXProvider components={components}>
+        <MDXRenderer>{content}</MDXRenderer>
+      </MDXProvider>
+    </MDXBody>
   )
 }
 
 export default MDX
+
+const MDXBody = styled.div`
+  ${prismCSS}
+`
