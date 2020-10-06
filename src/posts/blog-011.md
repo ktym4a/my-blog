@@ -5,7 +5,7 @@ post_img: '../images/image_005.jpg'
 excerpt: 'this is excerpt.this is excerpt.this is excerpt.this is excerpt.this is excerpt.this is excerpt.this is excerpt.this is excerpt.this is excerpt.this is excerpt.this is excerpt.this is excerpt.this is excerpt.'
 ---
 
-Hello, world! This is a demo post for `gatsby-theme-novela`. Novela is built by the team at [Narative](https://narative.co), and built for everyone that loves the web.
+Hello, world! This is a demo post for gatsby-theme-novela. Novela is built by the team at [Narative](https://narative.co), and built for everyone that loves the web.
 
 In my experience, the challenges that growing companies struggle with rarely stem from a lack of good ideas. Good ideas are everywhere. In my experience, the challenges that growing companies struggle with rarely stem from a lack of good ideas. Good ideas are everywhere. In my experience, the challenges that growing companies struggle with rarely stem from a lack of good ideas. Good ideas are everywhere.
 
@@ -36,38 +36,6 @@ But it takes more than good ideas to build and grow a business. It takes people 
 <div class="Image__Small">
   <img src="https://raw.githubusercontent.com/narative/gatsby-theme-novela/37bb5268ca0480678aeaec96a36708e94687f273/www/content/posts/2019-04-31-understanding-the-gatsby-lifecycle/images/small.gif" alt="alt text for small gif" />
   <figcaption>Caption text for small gif</figcaption>
-</div>
-
-## Now with Social Sharing blocks!
-
-Here’s a Twitter shortcode:
-
-<div class="Image__Small">
-  <Tweet tweetId="1116723357410447360" />
-</div>
-
-Here’s a YouTube shortcode:
-
-<div class="Image__Small">
-  <YouTube videoId="4fHw4GeW3EU" />
-  <figcaption>With Small Video</figcaption>
-</div>
-
-<div class="Image__Medium">
-  <YouTube videoId="4fHw4GeW3EU" />
-  <figcaption>Caption Medium video</figcaption>
-</div>
-
-<div class="Image__Large">
-  <YouTube videoId="4fHw4GeW3EU" />
-  <figcaption>Caption Full Width video</figcaption>
-</div>
-
-Here’s a Github Gist shortcode:
-
-<div class="Image__Medium">
-  <Gist id="c1d9def425feb0d51455ff7e61110a2f" />
-  <figcaption>Gist video</figcaption>
 </div>
 
 ## This is a secondary heading
@@ -120,7 +88,7 @@ function SocialLinks({ fill = '#73737D' }: { fill: string }) {
 
 At Narative, we’ve been fans of Gatsby from day one, using it to build performant and flexible products for both clients and ourselves. With the growing community interest in Gatsby, we hope to create more resources that make it easier for anyone to grasp the power of this incredible tool.
 
-```js live
+```js
 const Wrapper = ({ children }) => (
   <div
     style={{
