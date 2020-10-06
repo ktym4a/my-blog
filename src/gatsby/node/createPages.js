@@ -45,6 +45,12 @@ module.exports = async ({ actions: { createPage }, graphql }) => {
             body
             timeToRead
           }
+          previous {
+            slug
+          }
+          next {
+            slug
+          }
         }
       }
     }
@@ -65,11 +71,15 @@ module.exports = async ({ actions: { createPage }, graphql }) => {
 
   res.data.allMdx.edges.forEach(edge => {
     const slug = edge.node.slug
+    const next = edge.next ? edge.next.slug : false
+    const previous = edge.previous ? edge.previous.slug : false
     createPage({
       component: articleTemplate,
       path: `${slug}`,
       context: {
         article: edge,
+        next,
+        previous,
       },
     })
   })

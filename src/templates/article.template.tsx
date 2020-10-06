@@ -6,6 +6,7 @@ import styled from '@emotion/styled'
 import Main from '@components/Main'
 import Layout from '@components/Layout'
 import MDXRenderer from '@components/MDXRenderer'
+import { ArticlPagination } from '@components/Pagination'
 
 // export const query = graphql`
 //   query($slug: String!) {
@@ -20,8 +21,9 @@ import MDXRenderer from '@components/MDXRenderer'
 // `
 
 const ArticlePage = ({ pageContext }) => {
-  const { article } = pageContext
+  const { article, next, previous } = pageContext
   const article_data = article.node
+  console.log(next, previous)
   return (
     <Layout>
       <Main>
@@ -34,6 +36,7 @@ const ArticlePage = ({ pageContext }) => {
         <ArticleContainer>
           <MDXRenderer content={article_data.body} />
         </ArticleContainer>
+        <ArticlPagination pageContext={pageContext} />
       </Main>
     </Layout>
   )
@@ -51,6 +54,7 @@ const ArticleContainer = styled.article`
   font-family: ${p => p.theme.fonts.serif};
   font-size: 1.7rem;
   line-height: 2.5rem;
+  padding-bottom: 30px;
 
   & *:last-child {
     margin-bottom: 0;
