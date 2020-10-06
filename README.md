@@ -1,4 +1,4 @@
 TODO
-[ ] Pager
-[ ] Prism Style
-[ ] SP Style
+[x] Pager
+[x] Prism Style
+[x] SP Style
