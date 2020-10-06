@@ -7,66 +7,47 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faAngleLeft, faAngleRight } from '@fortawesome/free-solid-svg-icons'
 
 interface paginationProps {
-  pageContext: pageContextProps
+  page: pageContextProps
 }
 
 interface pageContextProps {
-  index: number
-  first: boolean
-  last: boolean
-  pageCount: number
-  pathPrefix: string
+  next: { slug: string } | false
+  prev: { slug: string } | false
 }
 
 interface pageProps {
   type: string
-  to: number
-  path: string
-  active: number
+  to: string | false
 }
 
-const ArticlsPagination: React.FC<paginationProps> = ({ pageContext }) => {
-  if (pageContext.pageCount <= 1) return null
+const ArticlPagination: React.FC<paginationProps> = ({ page }) => {
+  if (!page.next && !page.prev) return null
 
   return (
     <PagerSection>
-      <Pager {...pageContext} />
+      <Pager {...page} />
     </PagerSection>
   )
 }
 
-const Pager: React.FC<pageContextProps> = ({
-  index,
-  first,
-  last,
-  pageCount,
-  pathPrefix,
-}) => {
+const Pager: React.FC<pageContextProps> = ({ next, prev }) => {
+  const to_next = next ? next.slug : next
+  const to_prev = prev ? prev.slug : prev
+
   return (
     <PaginationNav>
-      <PagerLink
-        type={'prev'}
-        to={index - 1}
-        path={pathPrefix}
-        active={first ? 1 : 0}
-      />
-      <PagerText>
-        {index} / {pageCount}
-      </PagerText>
-      <PagerLink
-        type={'next'}
-        to={index + 1}
-        path={pathPrefix}
-        active={last ? 1 : 0}
-      />
+      <PagerLink type={'prev'} to={to_prev} />
+      <PagerText></PagerText>
+      <PagerLink type={'next'} to={to_next} />
     </PaginationNav>
   )
 }
 
-const PagerLink: React.FC<pageProps> = ({ to, type, path, active }) => {
-  const link = to === 1 ? path : path + 'page/' + to
+const PagerLink: React.FC<pageProps> = ({ to, type }) => {
+  const link = to ? `/${to}` : '/'
+
   return (
-    <PagerUnit to={link} type={type} active={active ? 1 : 0}>
+    <PagerUnit to={link} type={type} active={!to ? 1 : 0}>
       <ArrowIcon
         icon={type === 'prev' ? faAngleLeft : faAngleRight}
         size="lg"
@@ -75,7 +56,7 @@ const PagerLink: React.FC<pageProps> = ({ to, type, path, active }) => {
   )
 }
 
-export default ArticlsPagination
+export default ArticlPagination
 
 const PagerSection = styled.section`
   padding-bottom: 30px;
@@ -112,7 +93,7 @@ const PagerUnit = styled(Link)<{ type: string; active: number }>`
   }
 `
 
-const NotActivePager = p => css`
+const NotActivePager = css`
   pointer-events: none;
   opacity: 0;
 `

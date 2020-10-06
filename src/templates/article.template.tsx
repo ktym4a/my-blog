@@ -21,9 +21,9 @@ import { ArticlPagination } from '@components/Pagination'
 // `
 
 const ArticlePage = ({ pageContext }) => {
-  const { article, next, previous } = pageContext
+  const { article, page } = pageContext
   const article_data = article.node
-  console.log(next, previous)
+
   return (
     <Layout>
       <Main>
@@ -36,7 +36,7 @@ const ArticlePage = ({ pageContext }) => {
         <ArticleContainer>
           <MDXRenderer content={article_data.body} />
         </ArticleContainer>
-        <ArticlPagination pageContext={pageContext} />
+        <ArticlPagination page={page} />
       </Main>
     </Layout>
   )

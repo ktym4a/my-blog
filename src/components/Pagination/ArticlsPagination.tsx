@@ -112,7 +112,7 @@ const PagerUnit = styled(Link)<{ type: string; active: number }>`
   }
 `
 
-const NotActivePager = p => css`
+const NotActivePager = css`
   pointer-events: none;
   opacity: 0;
 `
