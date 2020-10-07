@@ -37,7 +37,6 @@ const Pager: React.FC<pageContextProps> = ({ next, prev }) => {
   return (
     <PaginationNav>
       <PagerLink type={'prev'} to={to_prev} />
-      <PagerText></PagerText>
       <PagerLink type={'next'} to={to_next} />
     </PaginationNav>
   )
