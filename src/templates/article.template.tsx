@@ -54,7 +54,7 @@ const ArticleContainer = styled.article`
   font-family: ${p => p.theme.fonts.serif};
   font-size: 1.7rem;
   line-height: 2.5rem;
-  padding-bottom: 30px;
+  padding-bottom: 60px;
 
   & *:last-child {
     margin-bottom: 0;

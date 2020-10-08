@@ -22,5 +22,5 @@ const ArticleSection = styled.section`
   grid-template-rows: 2;
   grid-row-gap: 30px;
   grid-column-gap: 30px;
-  padding-bottom: 30px;
+  padding-bottom: 60px;
 `

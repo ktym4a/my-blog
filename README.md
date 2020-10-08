@@ -1,8 +1,8 @@
 ## TODO
 
-- [ ] Pager
+- [x] Pager
 - [ ] Style
   - [ ] Responsive
-  - [ ] Prism
+  - [x] Prism
 - [ ] set Typescript
 - [ ] 共通化
