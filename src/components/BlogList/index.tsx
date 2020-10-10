@@ -3,7 +3,13 @@ import styled from '@emotion/styled'
 
 import BlogItem from '@components/BlogItem'
 
-const BlogList: React.FC = ({ articles }: any) => {
+import { SitePageContext } from '~types/graphql-types'
+
+interface BlogListProps {
+  articles: SitePageContext['group']
+}
+
+const BlogList: React.FC<BlogListProps> = ({ articles }: any) => {
   return (
     <ArticleSection>
       {articles.map((article: any, index: number) => {

@@ -14,8 +14,8 @@ const createPaginatedPages = require('gatsby-paginate')
 
 module.exports = async ({ actions: { createPage }, graphql }) => {
   const res = await graphql(`
-    query {
-      allMdx(sort: {fields: [frontmatter___date], order: DESC}) {
+    query Articls {
+      allMdx(sort: { fields: [frontmatter___date], order: DESC }) {
         edges {
           node {
             frontmatter {
@@ -23,12 +23,24 @@ module.exports = async ({ actions: { createPage }, graphql }) => {
               post_img {
                 full: childImageSharp {
                   fluid(maxWidth: 800, quality: 100) {
-                    ${GatsbyFluid_withWebp}
+                    base64
+                    aspectRatio
+                    src
+                    srcSet
+                    srcWebp
+                    srcSetWebp
+                    sizes
                   }
                 }
                 list: childImageSharp {
                   fluid(maxWidth: 457, quality: 100) {
-                    ${GatsbyFluid_withWebp}
+                    base64
+                    aspectRatio
+                    src
+                    srcSet
+                    srcWebp
+                    srcSetWebp
+                    sizes
                   }
                 }
                 seo: childImageSharp {
@@ -46,10 +58,50 @@ module.exports = async ({ actions: { createPage }, graphql }) => {
             timeToRead
           }
           previous {
+            frontmatter {
+              date(formatString: "MMMM D, YYYY")
+              post_img {
+                list: childImageSharp {
+                  fluid(maxWidth: 457, quality: 100) {
+                    base64
+                    aspectRatio
+                    src
+                    srcSet
+                    srcWebp
+                    srcSetWebp
+                    sizes
+                  }
+                }
+              }
+              excerpt
+              title
+            }
+            id
             slug
+            timeToRead
           }
           next {
+            frontmatter {
+              date(formatString: "MMMM D, YYYY")
+              post_img {
+                list: childImageSharp {
+                  fluid(maxWidth: 457, quality: 100) {
+                    base64
+                    aspectRatio
+                    src
+                    srcSet
+                    srcWebp
+                    srcSetWebp
+                    sizes
+                  }
+                }
+              }
+              excerpt
+              title
+            }
+            id
             slug
+            timeToRead
           }
         }
       }
@@ -63,7 +115,7 @@ module.exports = async ({ actions: { createPage }, graphql }) => {
     edges: res.data.allMdx.edges,
     createPage,
     pageTemplate: articlesTemplate,
-    pageLength: 6,
+    pageLength: 20,
     pathPrefix: '/',
     buildPath: (index, pathPrefix) => (index > 1 ? `/page/${index}` : '/'),
     context: {},
@@ -72,17 +124,11 @@ module.exports = async ({ actions: { createPage }, graphql }) => {
   res.data.allMdx.edges.forEach(edge => {
     const slug = edge.node.slug
 
-    const page = {
-      next: edge.next,
-      prev: edge.previous,
-    }
-
     createPage({
       component: articleTemplate,
       path: `${slug}`,
       context: {
         article: edge,
-        page,
       },
     })
   })

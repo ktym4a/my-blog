@@ -8,8 +8,10 @@ import Layout from '@components/Layout'
 import MDXRenderer from '@components/MDXRenderer'
 import { ArticlPagination } from '@components/Pagination'
 
+import { BlogIndexQuery } from '../../types/graphql-types'
+
 // export const query = graphql`
-//   query($slug: String!) {
+//   query AIUEO($slug: String!) {
 //     markdownRemark(fields: { slug: { eq: $slug } }) {
 //       frontmatter {
 //         title
@@ -20,8 +22,8 @@ import { ArticlPagination } from '@components/Pagination'
 //   }
 // `
 
-const ArticlePage = ({ pageContext }) => {
-  const { article, page } = pageContext
+const ArticlesPage: React.FC<any> = ({ pageContext }) => {
+  const { article, pager } = pageContext
   const article_data = article.node
 
   return (
@@ -36,7 +38,7 @@ const ArticlePage = ({ pageContext }) => {
         <ArticleContainer>
           <MDXRenderer content={article_data.body} />
         </ArticleContainer>
-        <ArticlPagination page={page} />
+        <ArticlPagination pager={pager} />
       </Main>
     </Layout>
   )
@@ -71,4 +73,4 @@ const TitleContainer = styled.div`
   font-family: ${p => p.theme.fonts.serif};
 `
 
-export default ArticlePage
+export default ArticlesPage

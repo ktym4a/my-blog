@@ -9,7 +9,7 @@ const DarkModeToggle: React.FC<{}> = () => {
   const [colorMode, setColorMode] = useColorMode()
   const isDark = colorMode === `dark`
 
-  function toggleColorMode(event) {
+  function toggleColorMode(event: { preventDefault: () => void }) {
     event.preventDefault()
     setColorMode(isDark ? `light` : `dark`)
   }

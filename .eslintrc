@@ -3,7 +3,8 @@
     "import/resolver": {
       "alias": [
         ["@components", "./src/components"],
-        ["@styles", "./src/styles"]
+        ["@styles", "./src/styles"],
+        ["~types", "./types"]
       ]
     }
   },

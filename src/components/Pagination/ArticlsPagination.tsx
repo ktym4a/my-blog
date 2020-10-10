@@ -6,27 +6,31 @@ import { Helmet } from 'react-helmet'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faAngleLeft, faAngleRight } from '@fortawesome/free-solid-svg-icons'
 
-interface paginationProps {
-  pageContext: pageContextProps
+import { SitePageContext } from '~types/graphql-types'
+
+interface ArticlsPaginationProps {
+  pageContext: SitePageContext
 }
 
 interface pageContextProps {
-  index: number
-  first: boolean
-  last: boolean
-  pageCount: number
-  pathPrefix: string
+  index?: SitePageContext['index']
+  first?: SitePageContext['first']
+  last?: SitePageContext['last']
+  pageCount?: SitePageContext['pageCount']
+  pathPrefix?: SitePageContext['pathPrefix']
 }
 
 interface pageProps {
   type: string
-  to: number
-  path: string
+  to: SitePageContext['index']
+  path: SitePageContext['pathPrefix']
   active: number
 }
 
-const ArticlsPagination: React.FC<paginationProps> = ({ pageContext }) => {
-  if (pageContext.pageCount <= 1) return null
+const ArticlsPagination: React.FC<ArticlsPaginationProps> = ({
+  pageContext,
+}) => {
+  if (pageContext.pageCount && pageContext.pageCount <= 1) return null
 
   return (
     <PagerSection>
@@ -46,7 +50,7 @@ const Pager: React.FC<pageContextProps> = ({
     <PaginationNav>
       <PagerLink
         type={'prev'}
-        to={index - 1}
+        to={index ? index - 1 : 0}
         path={pathPrefix}
         active={first ? 1 : 0}
       />
@@ -55,7 +59,7 @@ const Pager: React.FC<pageContextProps> = ({
       </PagerText>
       <PagerLink
         type={'next'}
-        to={index + 1}
+        to={index ? index + 1 : 0}
         path={pathPrefix}
         active={last ? 1 : 0}
       />
@@ -66,7 +70,7 @@ const Pager: React.FC<pageContextProps> = ({
 const PagerLink: React.FC<pageProps> = ({ to, type, path, active }) => {
   const link = to === 1 ? path : path + 'page/' + to
   return (
-    <PagerUnit to={link} type={type} active={active ? 1 : 0}>
+    <PagerUnit to={link ? link : ''} type={type} active={active ? 1 : 0}>
       <ArrowIcon
         icon={type === 'prev' ? faAngleLeft : faAngleRight}
         size="lg"

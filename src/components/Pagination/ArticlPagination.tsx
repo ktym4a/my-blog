@@ -7,7 +7,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faAngleLeft, faAngleRight } from '@fortawesome/free-solid-svg-icons'
 
 interface paginationProps {
-  page: pageContextProps
+  pager: pageContextProps
 }
 
 interface pageContextProps {
@@ -20,12 +20,12 @@ interface pageProps {
   to: string | false
 }
 
-const ArticlPagination: React.FC<paginationProps> = ({ page }) => {
-  if (!page.next && !page.prev) return null
+const ArticlPagination: React.FC<paginationProps> = ({ pager }) => {
+  if (!pager.next && !pager.prev) return null
 
   return (
     <PagerSection>
-      <Pager {...page} />
+      <Pager {...pager} />
     </PagerSection>
   )
 }
