@@ -40,7 +40,7 @@ const FooterWrapper = styled.div`
 `
 
 const Copylight = styled.div`
-  color: ${p => p.theme.colors.textNormal};
+  color: ${(p: any) => p.theme.colors.textNormal};
   font-size: 1.3rem;
   line-height: 1.3rem;
 `
@@ -55,7 +55,7 @@ const BrandIcons = styled.div`
 `
 
 const BrandIcon = styled(FontAwesomeIcon)`
-  color: ${p => p.theme.colors.boldColor};
+  color: ${(p: any) => p.theme.colors.boldColor};
 `
 
 const SNSLink = styled.a`

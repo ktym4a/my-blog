@@ -29,8 +29,8 @@ export default Layout
 
 const Container = styled.div`
   position: relative;
-  background: ${p => p.theme.colors.background};
-  transition: ${p => p.theme.colorModeTransition};
+  background: ${(p: any) => p.theme.colors.background};
+  transition: ${(p: any) => p.theme.colorModeTransition};
   min-height: 100vh;
   display: grid;
   grid-template-rows: auto 1fr auto;

@@ -36,12 +36,12 @@ export default BlogItem
 
 const NeumorphismArticle = styled.article`
   border-radius: 15px;
-  background: ${p => p.theme.colors.background};
-  box-shadow: ${p => p.theme.colors.neumorphism};
-  font-family: ${p => p.theme.fonts.serif};
+  background: ${(p: any) => p.theme.colors.background};
+  box-shadow: ${(p: any) => p.theme.colors.neumorphism};
+  font-family: ${(p: any) => p.theme.fonts.serif};
   transition: 0.3s ease-in-out;
   &:hover {
-    box-shadow: ${p => p.theme.colors.hoverNeumorphism};
+    box-shadow: ${(p: any) => p.theme.colors.hoverNeumorphism};
   }
 `
 
@@ -69,15 +69,15 @@ const TextContainer = styled.div`
 const Title = styled.h2`
   font-size: 2.3rem;
   font-weight: 900;
-  font-family: ${p => p.theme.fonts.montserrat};
-  color: ${p => p.theme.colors.boldColor};
+  font-family: ${(p: any) => p.theme.fonts.montserrat};
+  color: ${(p: any) => p.theme.colors.boldColor};
   margin-bottom: 2.5px;
-  transition: ${p => p.theme.colors.colorModeTransition};
+  transition: ${(p: any) => p.theme.colors.colorModeTransition};
 `
 
 const Excerpt = styled.p`
   font-size: 1.4rem;
-  color: ${p => p.theme.colors.textNormal};
+  color: ${(p: any) => p.theme.colors.textNormal};
   text-overflow: ellipsis;
   overflow-wrap: normal;
   -webkit-line-clamp: 2;
@@ -90,7 +90,7 @@ const Excerpt = styled.p`
 
 const MetaData = styled.div`
   font-size: 1.2rem;
-  color: ${p => p.theme.colors.grey};
+  color: ${(p: any) => p.theme.colors.grey};
   text-align: right;
   margin-top: auto;
 `

@@ -8,38 +8,31 @@ import Layout from '@components/Layout'
 import MDXRenderer from '@components/MDXRenderer'
 import { ArticlPagination } from '@components/Pagination'
 
-import { BlogIndexQuery } from '../../types/graphql-types'
+import { SitePageContextArticle } from '~types/graphql-types'
 
-// export const query = graphql`
-//   query AIUEO($slug: String!) {
-//     markdownRemark(fields: { slug: { eq: $slug } }) {
-//       frontmatter {
-//         title
-//         date
-//       }
-//       html
-//     }
-//   }
-// `
+interface ArticlePageProps {
+  pageContext: SitePageContextArticle
+}
 
-const ArticlesPage: React.FC<any> = ({ pageContext }) => {
-  const { article, pager } = pageContext
-  const article_data = article.node
+const ArticlePage: React.FC<ArticlePageProps> = ({ pageContext }) => {
+  const { node, next, previous } = pageContext
 
   return (
     <Layout>
-      <Main>
-        <TitleContainer>
-          <ArticleTitle>{article_data.frontmatter.title}</ArticleTitle>
-          <MetaData>
-            {article_data.frontmatter.date} - {article_data.timeToRead} min read
-          </MetaData>
-        </TitleContainer>
-        <ArticleContainer>
-          <MDXRenderer content={article_data.body} />
-        </ArticleContainer>
-        <ArticlPagination pager={pager} />
-      </Main>
+      {node?.frontmatter && (
+        <Main>
+          <TitleContainer>
+            <ArticleTitle>{node.frontmatter.title}</ArticleTitle>
+            <MetaData>
+              {node.frontmatter.date} - {node.timeToRead} min read
+            </MetaData>
+          </TitleContainer>
+          <ArticleContainer>
+            <MDXRenderer content={node.body} />
+          </ArticleContainer>
+          <ArticlPagination next={next} previous={previous} />
+        </Main>
+      )}
     </Layout>
   )
 }
@@ -47,13 +40,13 @@ const ArticlesPage: React.FC<any> = ({ pageContext }) => {
 const ArticleTitle = styled.h1`
   font-size: 5rem;
   font-weight: 900;
-  font-family: ${p => p.theme.fonts.montserrat};
-  color: ${p => p.theme.colors.textNormal};
-  transition: ${p => p.theme.colors.colorModeTransition};
+  font-family: ${(p: any) => p.theme.fonts.montserrat};
+  color: ${(p: any) => p.theme.colors.textNormal};
+  transition: ${(p: any) => p.theme.colors.colorModeTransition};
 `
 
 const ArticleContainer = styled.article`
-  font-family: ${p => p.theme.fonts.serif};
+  font-family: ${(p: any) => p.theme.fonts.serif};
   font-size: 1.7rem;
   line-height: 2.5rem;
   padding-bottom: 60px;
@@ -65,12 +58,12 @@ const ArticleContainer = styled.article`
 
 const MetaData = styled.div`
   font-size: 1.5rem;
-  color: ${p => p.theme.colors.grey};
+  color: ${(p: any) => p.theme.colors.grey};
 `
 
 const TitleContainer = styled.div`
   margin-bottom: 3rem;
-  font-family: ${p => p.theme.fonts.serif};
+  font-family: ${(p: any) => p.theme.fonts.serif};
 `
 
-export default ArticlesPage
+export default ArticlePage

@@ -34,11 +34,11 @@ const articleImage = styled.img`
 `
 
 const articleAnchor = styled.a`
-  transition: ${p => p.theme.colorModeTransition};
-  color: ${p => p.theme.colors.textColor};
+  transition: ${(p: any) => p.theme.colorModeTransition};
+  color: ${(p: any) => p.theme.colors.textColor};
   text-decoration: underline;
   &:visited {
-    color: ${p => p.theme.colors.textColor};
+    color: ${(p: any) => p.theme.colors.textColor};
     opacity: 0.85;
   }
 `
@@ -51,7 +51,7 @@ const Blockquote = styled.blockquote`
   padding-top: 0;
   margin-bottom: 1.75rem;
   font-style: italic;
-  border-left: 0.3rem solid ${p => p.theme.colors.textColor};
+  border-left: 0.3rem solid ${(p: any) => p.theme.colors.textColor};
 `
 
 const h2 = styled.h2`
@@ -84,10 +84,10 @@ const HorizontalRule = styled.hr<{ isDark: boolean }>`
   height: 1px;
   background-image: linear-gradient(
     to right,
-    ${p => p.theme.colors.background},
-    ${p => p.theme.colors.textColor},
-    ${p => p.theme.colors.textColor},
-    ${p => p.theme.colors.background}
+    ${(p: any) => p.theme.colors.background},
+    ${(p: any) => p.theme.colors.textColor},
+    ${(p: any) => p.theme.colors.textColor},
+    ${(p: any) => p.theme.colors.background}
   );
   margin: 3rem;
 `
@@ -102,7 +102,7 @@ const uList = styled.ul`
     height: 8px;
     width: 8px;
     border-radius: 50%;
-    background: ${p => p.theme.colors.textColor};
+    background: ${(p: any) => p.theme.colors.textColor};
   }
 `
 
@@ -116,7 +116,7 @@ const oList = styled.ul`
     left: -3rem;
     top: -0.3rem;
     font-size: 2rem;
-    color: ${p => p.theme.colors.textColor};
+    color: ${(p: any) => p.theme.colors.textColor};
   }
 `
 
@@ -128,11 +128,11 @@ const Table = styled.table`
   margin-bottom: 2.5rem;
   position: relative;
   line-height: 1.65;
-  color: ${p => p.theme.colors.grey};
-  transition: ${p => p.theme.colorModeTransition};
-  background: ${p => p.theme.colors.card};
+  color: ${(p: any) => p.theme.colors.grey};
+  transition: ${(p: any) => p.theme.colorModeTransition};
+  background: ${(p: any) => p.theme.colors.card};
   width: 100%;
-  border: 1px solid ${p => p.theme.colors.horizontalRule};
+  border: 1px solid ${(p: any) => p.theme.colors.horizontalRule};
   border-radius: 5px;
   overflow: hidden;
   border-collapse: separate;
@@ -143,21 +143,21 @@ const TableHead = styled.thead`
   position: relative;
   line-height: 1.756;
   font-weight: 600;
-  color: ${p => p.theme.colors.primary};
-  transition: ${p => p.theme.colorModeTransition};
+  color: ${(p: any) => p.theme.colors.primary};
+  transition: ${(p: any) => p.theme.colorModeTransition};
 `
 
 const TableHeadCell = styled.th`
   padding: 10px;
   font-size: 1.2em;
-  background: ${p => p.theme.colors.card};
+  background: ${(p: any) => p.theme.colors.card};
 `
 
 const TableCell = styled.td`
-  border-top: 1px solid ${p => p.theme.colors.horizontalRule};
+  border-top: 1px solid ${(p: any) => p.theme.colors.horizontalRule};
   padding: 10px;
   font-size: 1em;
-  background: ${p => p.theme.colors.card};
+  background: ${(p: any) => p.theme.colors.card};
 `
 
 export const articleCSS = {

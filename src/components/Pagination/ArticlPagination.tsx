@@ -68,8 +68,8 @@ const PaginationNav = styled.nav`
 `
 
 const PagerText = styled.span`
-  color: ${p => p.theme.colors.textNormal};
-  font-family: ${p => p.theme.fonts.serif};
+  color: ${(p: any) => p.theme.colors.textNormal};
+  font-family: ${(p: any) => p.theme.fonts.serif};
   font-size: 1.4rem;
   line-height: 1.4rem;
 `
@@ -88,7 +88,7 @@ const PagerUnit = styled(Link)<{ type: string; active: number }>`
   ${p => (p.active === 1 ? NotActivePager : ActivePager)}
 
   &:hover {
-    box-shadow: ${p => p.theme.colors.hoverNeumorphism};
+    box-shadow: ${(p: any) => p.theme.colors.hoverNeumorphism};
   }
 `
 
@@ -97,11 +97,11 @@ const NotActivePager = css`
   opacity: 0;
 `
 
-const ActivePager = p => css`
+const ActivePager = (p: any) => css`
   background: ${p.theme.colors.background};
   box-shadow: ${p.theme.colors.neumorphism};
 `
 
 const ArrowIcon = styled(FontAwesomeIcon)`
-  color: ${p => p.theme.colors.boldColor};
+  color: ${(p: any) => p.theme.colors.boldColor};
 `

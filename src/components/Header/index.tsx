@@ -52,12 +52,12 @@ const HeaderWrapper = styled.div`
 `
 
 const HeaderText = styled(Link)`
-  color: ${p => p.theme.colors.boldColor};
+  color: ${(p: any) => p.theme.colors.boldColor};
   font-weight: 900;
   font-size: 5rem;
   text-align: center;
-  transition: ${p => p.theme.colors.colorModeTransition};
-  font-family: ${p => p.theme.fonts.montserrat};
+  transition: ${(p: any) => p.theme.colors.colorModeTransition};
+  font-family: ${(p: any) => p.theme.fonts.montserrat};
 `
 
 const IconWrapper = styled.button<{ isDark: boolean }>`
@@ -94,8 +94,8 @@ const MoonOrSun = styled.div<{ isDark: boolean }>`
   height: 24px;
   border-radius: 50%;
   border: ${p => (p.isDark ? '4px' : '2px')} solid
-    ${p => p.theme.colors.primary};
-  background: ${p => p.theme.colors.primary};
+    ${(p: any) => p.theme.colors.primary};
+  background: ${(p: any) => p.theme.colors.primary};
   transform: scale(${p => (p.isDark ? 0.55 : 1)});
   transition: all 0.45s ease;
   overflow: ${p => (p.isDark ? 'visible' : 'hidden')};
@@ -106,7 +106,7 @@ const MoonOrSun = styled.div<{ isDark: boolean }>`
     top: -9px;
     height: 24px;
     width: 24px;
-    border: 2px solid ${p => p.theme.colors.primary};
+    border: 2px solid ${(p: any) => p.theme.colors.primary};
     border-radius: 50%;
     transform: translate(${p => (p.isDark ? '14px, -14px' : '0, 0')});
     opacity: ${p => (p.isDark ? 0 : 1)};
@@ -121,14 +121,14 @@ const MoonOrSun = styled.div<{ isDark: boolean }>`
     position: absolute;
     top: 50%;
     left: 50%;
-    box-shadow: 0 -23px 0 ${p => p.theme.colors.primary},
-      0 23px 0 ${p => p.theme.colors.primary},
-      23px 0 0 ${p => p.theme.colors.primary},
-      -23px 0 0 ${p => p.theme.colors.primary},
-      15px 15px 0 ${p => p.theme.colors.primary},
-      -15px 15px 0 ${p => p.theme.colors.primary},
-      15px -15px 0 ${p => p.theme.colors.primary},
-      -15px -15px 0 ${p => p.theme.colors.primary};
+    box-shadow: 0 -23px 0 ${(p: any) => p.theme.colors.primary},
+      0 23px 0 ${(p: any) => p.theme.colors.primary},
+      23px 0 0 ${(p: any) => p.theme.colors.primary},
+      -23px 0 0 ${(p: any) => p.theme.colors.primary},
+      15px 15px 0 ${(p: any) => p.theme.colors.primary},
+      -15px 15px 0 ${(p: any) => p.theme.colors.primary},
+      15px -15px 0 ${(p: any) => p.theme.colors.primary},
+      -15px -15px 0 ${(p: any) => p.theme.colors.primary};
     transform: scale(${p => (p.isDark ? 1 : 0)});
     transition: all 0.35s ease;
   }
@@ -142,9 +142,9 @@ const MoonMask = styled.div<{ isDark: boolean }>`
   width: 24px;
   border-radius: 50%;
   border: 0;
-  background: ${p => p.theme.colors.background};
+  background: ${(p: any) => p.theme.colors.background};
   transform: translate(${p => (p.isDark ? '14px, -14px' : '0, 0')});
   opacity: ${p => (p.isDark ? 0 : 1)};
-  transition: ${p => p.theme.colorModeTransition}, transform 0.45s ease;
+  transition: ${(p: any) => p.theme.colorModeTransition}, transform 0.45s ease;
 `
 export default Header
