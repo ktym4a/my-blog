@@ -4,5 +4,5 @@
 - [ ] Style
   - [ ] Responsive
   - [x] Prism
-- [ ] set Typescript
+- [x] set Typescript
 - [ ] 共通化
