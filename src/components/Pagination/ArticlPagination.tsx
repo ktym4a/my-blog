@@ -6,44 +6,33 @@ import { Helmet } from 'react-helmet'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faAngleLeft, faAngleRight } from '@fortawesome/free-solid-svg-icons'
 
-interface paginationProps {
-  pager: pageContextProps
-}
+import { Mdx } from '~types/graphql-types'
 
-interface pageContextProps {
-  next: { slug: string } | false
-  prev: { slug: string } | false
+interface paginationProps {
+  next: Mdx | null | undefined
+  previous: Mdx | null | undefined
 }
 
 interface pageProps {
   type: string
-  to: string | false
+  to: Mdx | null | undefined
 }
 
-const ArticlPagination: React.FC<paginationProps> = ({ pager }) => {
-  if (!pager.next && !pager.prev) return null
+const ArticlPagination: React.FC<paginationProps> = ({ next, previous }) => {
+  if (!next && !previous) return null
 
   return (
     <PagerSection>
-      <Pager {...pager} />
+      <PaginationNav>
+        <PagerLink type={'prev'} to={previous} />
+        <PagerLink type={'next'} to={next} />
+      </PaginationNav>
     </PagerSection>
   )
 }
 
-const Pager: React.FC<pageContextProps> = ({ next, prev }) => {
-  const to_next = next ? next.slug : next
-  const to_prev = prev ? prev.slug : prev
-
-  return (
-    <PaginationNav>
-      <PagerLink type={'prev'} to={to_prev} />
-      <PagerLink type={'next'} to={to_next} />
-    </PaginationNav>
-  )
-}
-
 const PagerLink: React.FC<pageProps> = ({ to, type }) => {
-  const link = to ? `/${to}` : '/'
+  const link = to ? `/${to.slug}` : '/'
 
   return (
     <PagerUnit to={link} type={type} active={!to ? 1 : 0}>
@@ -65,13 +54,6 @@ const PaginationNav = styled.nav`
   display: flex;
   align-items: center;
   justify-content: center;
-`
-
-const PagerText = styled.span`
-  color: ${(p: any) => p.theme.colors.textNormal};
-  font-family: ${(p: any) => p.theme.fonts.serif};
-  font-size: 1.4rem;
-  line-height: 1.4rem;
 `
 
 const PagerUnit = styled(Link)<{ type: string; active: number }>`

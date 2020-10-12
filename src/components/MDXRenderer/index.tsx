@@ -8,6 +8,8 @@ import { jsx, css } from '@emotion/core'
 import { useColorMode } from 'theme-ui'
 import { articleCSS, prismCSS } from '@styles/index'
 
+import { Mdx } from '~types/graphql-types'
+
 const components = {
   img: articleCSS.articleImage,
   a: articleCSS.articleAnchor,
@@ -29,7 +31,7 @@ const components = {
 }
 
 interface MDXProps {
-  content: React.ReactNode
+  content: Mdx['body']
 }
 
 const MDX: React.FC<MDXProps> = ({ content }) => {

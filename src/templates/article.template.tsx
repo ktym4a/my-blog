@@ -8,14 +8,16 @@ import Layout from '@components/Layout'
 import MDXRenderer from '@components/MDXRenderer'
 import { ArticlPagination } from '@components/Pagination'
 
-import { SitePageContextArticle } from '~types/graphql-types'
+import { MdxEdge, ArticlsQuery } from '~types/graphql-types'
 
 interface ArticlePageProps {
-  pageContext: SitePageContextArticle
+  pageContext: {
+    article: MdxEdge
+  }
 }
 
 const ArticlePage: React.FC<ArticlePageProps> = ({ pageContext }) => {
-  const { node, next, previous } = pageContext
+  const { node, next, previous } = pageContext.article
 
   return (
     <Layout>
