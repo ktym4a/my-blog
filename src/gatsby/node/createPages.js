@@ -1,15 +1,5 @@
 const path = require(`path`)
 
-const GatsbyFluid_withWebp = `
-  base64
-  aspectRatio
-  src
-  srcSet
-  srcWebp
-  srcSetWebp
-  sizes
-`
-
 const createPaginatedPages = require('gatsby-paginate')
 
 module.exports = async ({ actions: { createPage }, graphql }) => {
@@ -117,7 +107,7 @@ module.exports = async ({ actions: { createPage }, graphql }) => {
     pageTemplate: articlesTemplate,
     pageLength: 20,
     pathPrefix: '/',
-    buildPath: (index, pathPrefix) => (index > 1 ? `/page/${index}` : '/'),
+    buildPath: index => (index > 1 ? `/page/${index}` : '/'),
     context: {},
   })
 

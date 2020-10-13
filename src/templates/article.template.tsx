@@ -1,4 +1,3 @@
-import { graphql } from 'gatsby'
 import React from 'react'
 
 import styled from '@emotion/styled'
@@ -8,7 +7,7 @@ import Layout from '@components/Layout'
 import MDXRenderer from '@components/MDXRenderer'
 import { ArticlPagination } from '@components/Pagination'
 
-import { MdxEdge, ArticlsQuery } from '~types/graphql-types'
+import { MdxEdge } from '~types/graphql-types'
 
 interface ArticlePageProps {
   pageContext: {

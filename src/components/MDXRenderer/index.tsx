@@ -4,7 +4,6 @@ import { MDXRenderer } from 'gatsby-plugin-mdx'
 import { MDXProvider } from '@mdx-js/react'
 
 import styled from '@emotion/styled'
-import { jsx, css } from '@emotion/core'
 import { useColorMode } from 'theme-ui'
 import { articleCSS, prismCSS } from '@styles/index'
 
