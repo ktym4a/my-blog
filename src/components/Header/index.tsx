@@ -85,6 +85,10 @@ const IconWrapper = styled.button<{ isDark: boolean }>`
     background: rgba(255, 255, 255, 0.01);
     border-radius: 5px;
   }
+
+  @media screen and (max-width: 767px) {
+    right: 1rem;
+  }
 `
 
 // This is based off a codepen! Much appreciated to: https://codepen.io/aaroniker/pen/KGpXZo

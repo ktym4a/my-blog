@@ -50,6 +50,9 @@ const Item = styled(Link)`
   display: flex;
   flex-direction: column;
   height: 100%;
+  @media screen and (max-width: 767px) {
+    padding: 15px 15px 10px;
+  }
 `
 
 const ImageContainer = styled.div`
@@ -59,6 +62,10 @@ const ImageContainer = styled.div`
   margin-bottom: 7.5px;
   & > div {
     height: 100%;
+  }
+
+  @media screen and (max-width: 767px) {
+    height: 150px;
   }
 `
 

@@ -105,7 +105,7 @@ module.exports = async ({ actions: { createPage }, graphql }) => {
     edges: res.data.allMdx.edges,
     createPage,
     pageTemplate: articlesTemplate,
-    pageLength: 20,
+    pageLength: 6,
     pathPrefix: '/',
     buildPath: index => (index > 1 ? `/page/${index}` : '/'),
     context: {},

@@ -29,4 +29,9 @@ const ArticleSection = styled.section`
   grid-row-gap: 30px;
   grid-column-gap: 30px;
   padding-bottom: 60px;
+
+  @media screen and (max-width: 767px) {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1;
+  }
 `

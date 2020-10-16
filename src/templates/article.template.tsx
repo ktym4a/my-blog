@@ -44,6 +44,10 @@ const ArticleTitle = styled.h1`
   font-family: ${(p: any) => p.theme.fonts.montserrat};
   color: ${(p: any) => p.theme.colors.textNormal};
   transition: ${(p: any) => p.theme.colors.colorModeTransition};
+
+  @media screen and (max-width: 767px) {
+    font-size: 3.5rem;
+  }
 `
 
 const ArticleContainer = styled.article`
