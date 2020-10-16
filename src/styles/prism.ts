@@ -138,6 +138,11 @@ export const prismCSS = css`
     padding-right: 1em;
     padding-left: 1.25em;
     border-left: 0.25em solid #ffa7c4;
+
+    @media screen and (max-width: 767px) {
+      margin-right: -0.5rem;
+      margin-left: -0.5rem;
+    }
   }
 
   .gatsby-highlight {
@@ -148,5 +153,10 @@ export const prismCSS = css`
     background: #011627;
     -webkit-overflow-scrolling: touch;
     overflow: auto;
+
+    @media screen and (max-width: 767px) {
+      margin-right: -0.5rem;
+      margin-left: -0.5rem;
+    }
   }
 `

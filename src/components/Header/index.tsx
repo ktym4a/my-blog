@@ -58,6 +58,10 @@ const HeaderText = styled(Link)`
   text-align: center;
   transition: ${(p: any) => p.theme.colors.colorModeTransition};
   font-family: ${(p: any) => p.theme.fonts.montserrat};
+
+  @media screen and (max-width: 767px) {
+    font-size: 4rem;
+  }
 `
 
 const IconWrapper = styled.button<{ isDark: boolean }>`

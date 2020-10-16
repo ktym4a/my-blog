@@ -10,7 +10,6 @@ export default {
     'inset 0 0 0px #bfbfbf, inset 0 0 0px #ffffff, 3px 3px 6px #bfbfbf, -3px -3px 6px #ffffff',
   hoverNeumorphism:
     'inset 2px 2px 5px #bfbfbf, inset -2px -2px 5px #ffffff, 0 0 0px #bfbfbf, 0 0 0px #ffffff',
-  card: '#fff',
   horizontalRule: 'rgba(8, 8, 11, 0.15)',
   modes: {
     dark: {
@@ -25,7 +24,6 @@ export default {
         'inset 0 0 0px #2a2f38, inset 0 0 0px #424958, 3px 3px 6px #2a2f38, -3px -3px 6px #424958',
       hoverNeumorphism:
         'inset 2px 2px 5px #2a2f38, inset -2px -2px 5px #424958, 0 0 0px #2a2f38, 0 0 0px #424958',
-      card: '#1D2128',
       horizontalRule: 'rgba(255, 255, 255, 0.15)',
     },
   },

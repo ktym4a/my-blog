@@ -122,18 +122,17 @@ const oList = styled.ul`
 
 const Paragraph = styled.p`
   ${articleMarginBottom};
+  line-height: 2.5rem;
 `
 
 const Table = styled.table`
   margin-bottom: 2.5rem;
   position: relative;
   line-height: 1.65;
-  color: ${(p: any) => p.theme.colors.grey};
-  transition: ${(p: any) => p.theme.colorModeTransition};
-  background: ${(p: any) => p.theme.colors.card};
+  color: #fff;
+  background: #011627;
   width: 100%;
-  border: 1px solid ${(p: any) => p.theme.colors.horizontalRule};
-  border-radius: 5px;
+  border-radius: 10px;
   overflow: hidden;
   border-collapse: separate;
 `
@@ -143,21 +142,20 @@ const TableHead = styled.thead`
   position: relative;
   line-height: 1.756;
   font-weight: 600;
-  color: ${(p: any) => p.theme.colors.primary};
-  transition: ${(p: any) => p.theme.colorModeTransition};
+  color: rgb(130, 170, 255);
 `
 
 const TableHeadCell = styled.th`
   padding: 10px;
   font-size: 1.2em;
-  background: ${(p: any) => p.theme.colors.card};
+  background: #011627;
 `
 
 const TableCell = styled.td`
-  border-top: 1px solid ${(p: any) => p.theme.colors.horizontalRule};
+  border-top: 1px solid #ffa7c4;
   padding: 10px;
   font-size: 1em;
-  background: ${(p: any) => p.theme.colors.card};
+  background: #011627;
 `
 
 export const articleCSS = {
