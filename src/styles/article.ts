@@ -57,26 +57,41 @@ const Blockquote = styled.blockquote`
 const h2 = styled.h2`
   font-size: 2em;
   ${hProps};
+  & .anchor {
+    display: none;
+  }
 `
 
 const h3 = styled.h3`
   font-size: 1.5em;
   ${hProps};
+  & .anchor {
+    display: none;
+  }
 `
 
 const h4 = styled.h4`
   font-size: 1em;
   ${hProps};
+  & .anchor {
+    display: none;
+  }
 `
 
 const h5 = styled.h5`
   font-size: 0.83em;
   ${hProps};
+  & .anchor {
+    display: none;
+  }
 `
 
 const h6 = styled.h6`
   font-size: 0.67em;
   ${hProps};
+  & .anchor {
+    display: none;
+  }
 `
 
 const HorizontalRule = styled.hr<{ isDark: boolean }>`
@@ -122,7 +137,7 @@ const oList = styled.ul`
 
 const Paragraph = styled.p`
   ${articleMarginBottom};
-  line-height: 2.5rem;
+  line-height: 3rem;
 `
 
 const Table = styled.table`
