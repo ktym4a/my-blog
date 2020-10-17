@@ -52,6 +52,13 @@ module.exports = {
               withWebp: true,
             },
           },
+          {
+            resolve: 'gatsby-remark-external-links',
+            options: {
+              target: '_blank',
+              rel: 'nofollow noopener',
+            },
+          },
           `gatsby-remark-autolink-headers`,
           {
             resolve: 'gatsby-remark-prismjs',
