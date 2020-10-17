@@ -1,5 +1,10 @@
 module.exports = {
   /* Your site config here */
+  siteMetadata: {
+    siteUrl: `https://ktym4a.com`,
+    title: `KTYM4a`,
+    description: `Personal blog by KTYM4a. I explain with words and code.`,
+  },
   plugins: [
     `gatsby-plugin-typescript`,
     `gatsby-plugin-emotion`,
@@ -71,6 +76,22 @@ module.exports = {
             },
           },
         ],
+      },
+    },
+    `gatsby-plugin-offline`,
+    `gatsby-plugin-sitemap`,
+    {
+      resolve: 'gatsby-plugin-robots-txt',
+      options: {
+        host: 'https://ktym4a.com',
+        sitemap: 'https://ktym4a.com/sitemap.xml',
+        policy: [{ userAgent: '*', allow: '/' }],
+      },
+    },
+    {
+      resolve: `gatsby-plugin-canonical-urls`,
+      options: {
+        siteUrl: `https://ktym4a.com`,
       },
     },
     {
