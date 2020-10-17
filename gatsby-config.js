@@ -4,6 +4,7 @@ module.exports = {
     siteUrl: `https://ktym4a.com`,
     title: `KTYM4a`,
     description: `Personal blog by KTYM4a. I explain with words and code.`,
+    author: `KTYM4a`,
   },
   plugins: [
     `gatsby-plugin-typescript`,

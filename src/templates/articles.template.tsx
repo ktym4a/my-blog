@@ -6,6 +6,7 @@ import Layout from '@components/Layout'
 import { ArticlsPagination } from '@components/Pagination'
 
 import { SitePageContext } from '~types/graphql-types'
+import SEO from '@components/SEO'
 
 interface ArticlesPageProps {
   pageContext: SitePageContext
@@ -16,6 +17,7 @@ const ArticlesPage: React.FC<ArticlesPageProps> = ({ pageContext }) => {
 
   return (
     <Layout>
+      <SEO />
       <Main>
         <BlogList articles={articles} />
         <ArticlsPagination pageContext={pageContext} />
