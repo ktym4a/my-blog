@@ -61,7 +61,7 @@ const SEO: React.FC<HelmetProps> = ({
     },
     {
       name: 'google-site-verification',
-      content: '#813pN3Tv_MeWoHVF5ogTDSNhdDkAR1e4bjqyTSZhzQ8',
+      content: '813pN3Tv_MeWoHVF5ogTDSNhdDkAR1e4bjqyTSZhzQ8',
     },
     { itemprop: 'name', content: title || site.title },
     { itemprop: 'description', content: description || site.description },
