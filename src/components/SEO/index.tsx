@@ -3,11 +3,10 @@ import Helmet from 'react-helmet'
 import { graphql, useStaticQuery } from 'gatsby'
 
 interface HelmetProps {
-  articlepathName?: string
-  description?: string
-  image?: string
-  pathname?: string
-  title?: string
+  description?: string | null
+  image?: string | null
+  pathname?: string | null
+  title?: string | null
 }
 
 const seoQuery = graphql`
@@ -24,7 +23,6 @@ const seoQuery = graphql`
 `
 
 const SEO: React.FC<HelmetProps> = ({
-  articlepathName,
   description,
   image,
   pathname,
@@ -33,12 +31,12 @@ const SEO: React.FC<HelmetProps> = ({
   const results = useStaticQuery(seoQuery)
   const site = results.site.siteMetadata
 
-  const pageUrl = site.siteUrl + pathname
+  const pageUrl = pathname ? `${site.siteUrl}/${pathname}` : site.siteUrl
 
   const fullURL = (path: string) => (path ? `${path}` : site.siteUrl)
 
   // If no image is provided lets looks for a default novela static image
-  image = image ? image : `${site.siteUrl}/preview.jpg`
+  image = image ? `${site.siteUrl}${image}` : `${site.siteUrl}/preview.png`
 
   // Checks if the source of the image is hosted on Contentful
   if (`${image}`.includes('ctfassets')) {
@@ -67,7 +65,7 @@ const SEO: React.FC<HelmetProps> = ({
     { name: 'description', content: description || site.description },
 
     { name: 'twitter:card', content: 'summary_large_image' },
-    { name: 'twitter:site', content: site.name },
+    { name: 'twitter:site', content: site.title },
     { name: 'twitter:title', content: title || site.title },
     { name: 'twitter:description', content: description || site.description },
     { name: 'twitter:creator', content: site.author },
@@ -78,10 +76,10 @@ const SEO: React.FC<HelmetProps> = ({
 
     { property: 'og:type', content: 'website' },
     { property: 'og:title', content: title || site.title },
-    { property: 'og:url', content: articlepathName || pageUrl },
+    { property: 'og:url', content: pageUrl },
     { property: 'og:image', content: image },
     { property: 'og:description', content: description || site.description },
-    { property: 'og:site_name', content: site.name },
+    { property: 'og:site_name', content: site.title },
   ]
 
   return (

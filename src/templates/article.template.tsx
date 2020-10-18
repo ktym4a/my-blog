@@ -6,34 +6,42 @@ import Main from '@components/Main'
 import Layout from '@components/Layout'
 import MDXRenderer from '@components/MDXRenderer'
 import { ArticlPagination } from '@components/Pagination'
-
-import { MdxEdge } from '~types/graphql-types'
+import SEO from '@components/SEO'
 
 interface ArticlePageProps {
   pageContext: {
-    article: MdxEdge
+    article: any
   }
 }
 
 const ArticlePage: React.FC<ArticlePageProps> = ({ pageContext }) => {
   const { node, next, previous } = pageContext.article
 
+  const description = node.frontmatter.excerpt
+  const image = node.frontmatter.post_img.seo.fixed.src
+  const pathname = node.slug
+  const title = node.frontmatter.title
+
   return (
     <Layout>
-      {node?.frontmatter && (
-        <Main>
-          <TitleContainer>
-            <ArticleTitle>{node.frontmatter.title}</ArticleTitle>
-            <MetaData>
-              {node.frontmatter.date} - {node.timeToRead} min read
-            </MetaData>
-          </TitleContainer>
-          <ArticleContainer>
-            <MDXRenderer content={node.body} />
-          </ArticleContainer>
-          <ArticlPagination next={next} previous={previous} />
-        </Main>
-      )}
+      <SEO
+        description={description}
+        image={image}
+        pathname={pathname}
+        title={title}
+      />
+      <Main>
+        <TitleContainer>
+          <ArticleTitle>{title}</ArticleTitle>
+          <MetaData>
+            {node.frontmatter.date} - {node.timeToRead} min read
+          </MetaData>
+        </TitleContainer>
+        <ArticleContainer>
+          <MDXRenderer content={node.body} />
+        </ArticleContainer>
+        <ArticlPagination next={next} previous={previous} />
+      </Main>
     </Layout>
   )
 }
