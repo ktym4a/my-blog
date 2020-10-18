@@ -62,6 +62,8 @@ const ArticleContainer = styled.article`
   font-family: ${(p: any) => p.theme.fonts.serif};
   font-size: 1.7rem;
   padding-bottom: 60px;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
 
   & *:last-child {
     margin-bottom: 0;

@@ -7,12 +7,6 @@ module.exports = {
     author: `KTYM4a`,
   },
   plugins: [
-    {
-      resolve: 'gatsby-plugin-google-analytics',
-      options: {
-        trackingId: 'UA-180765882-1',
-      },
-    },
     `gatsby-plugin-typescript`,
     `gatsby-plugin-emotion`,
     `gatsby-plugin-react-helmet`,
@@ -41,6 +35,12 @@ module.exports = {
             'Noto+Sans+JP:400,700,900',
           ],
         },
+      },
+    },
+    {
+      resolve: 'gatsby-plugin-google-analytics',
+      options: {
+        trackingId: 'UA-180765882-1',
       },
     },
     {

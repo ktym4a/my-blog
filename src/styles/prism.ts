@@ -9,7 +9,7 @@ export const prismCSS = css`
       monospace;
     font-feature-settings: normal;
     text-align: left;
-    white-space: pre;
+    white-space: pre-wrap !important;
     word-spacing: normal;
     word-break: normal;
     word-wrap: normal;

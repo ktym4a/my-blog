@@ -41,6 +41,7 @@ const Header: React.FC = () => {
 
 const HeaderContainer = styled.header`
   padding: 20px 0;
+  overflow: hidden;
 `
 
 const HeaderWrapper = styled.div`
