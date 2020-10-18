@@ -113,6 +113,7 @@ module.exports = async ({ actions: { createPage }, graphql }) => {
 
   res.data.allMdx.edges.forEach(edge => {
     const slug = edge.node.slug
+    console.log(slug)
 
     createPage({
       component: articleTemplate,
