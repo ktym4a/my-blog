@@ -18,7 +18,7 @@ const BlogItem: React.FC<props> = ({ article }) => {
     <NeumorphismArticle>
       <Item to={`/${slug}`}>
         <ImageContainer>
-          <Image src={imageSource} />
+          <Image src={imageSource} alt={frontmatter.title} />
         </ImageContainer>
         <TextContainer>
           <Title>{frontmatter.title}</Title>
