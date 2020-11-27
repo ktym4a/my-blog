@@ -11,12 +11,17 @@ const Footer: React.FC = () => {
       <FooterWrapper>
         <Copylight>© 2020 KTYM4a</Copylight>
         <BrandIcons>
-          <SNSLink href="https://github.com/ktym4a/" target="_blank">
+          <SNSLink
+            href="https://github.com/ktym4a/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <BrandIcon icon={faGithub} size="lg" />
           </SNSLink>
           <SNSLink
             href="https://www.facebook.com/profile.php?id=100022627637039"
             target="_blank"
+            rel="noopener noreferrer"
           >
             <BrandIcon icon={faFacebook} size="lg" />
           </SNSLink>
