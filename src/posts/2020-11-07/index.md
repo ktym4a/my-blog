@@ -28,3 +28,9 @@ The app be able to search for movies via the OMDB API.
 ### Demo
 
 View the application at [here](https://movie-search.ktym4a.com/)
+
+```
+function hello(){
+　return "hello world!";
+}
+```
