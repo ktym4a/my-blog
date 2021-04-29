@@ -29,7 +29,7 @@ The app be able to search for movies via the OMDB API.
 
 View the application at [here](https://movie-search.ktym4a.com/)
 
-```
+```Javascript
 import React from 'react'
 import { Link } from 'gatsby'
 
